@@ -19,7 +19,7 @@ void Marquee::gotoXY(int x,int y ){
 
 void Marquee::displayMarquee(){
     int a=0,  c=1 ;
-char t[25] ="Arbol AVL";
+char t[25] ="Ajedrez";
 do
 {
 for (a=27;a<=66;a++)

@@ -6,7 +6,7 @@
 //#include "PrintTree.hpp"
 //#include "PrintBitMap.hpp"
 //#include "FileManager.hpp"
-#include "PDFManager.hpp"
+//#include "PDFManager.hpp"
 #include "ConsoleDataInput.hpp"
 #include <iostream>
 
@@ -87,27 +87,27 @@ void MenuPrincipal::searchValue() {
     ConsoleDataInput console;
     dato = console.integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS,45,16);
 
-    std::cout << (binaryAVLTree.search(dato) ? "Valor encontrado" : "Valor no encontrado");
+    //std::cout << (binaryAVLTree.search(dato) ? "Valor encontrado" : "Valor no encontrado");
     system("pause > nul");
 }
 
 void MenuPrincipal::printTree() {
     system("cls");
-    PrintTree::printGraphic(binaryAVLTree);
+    //PrintTree::printGraphic(binaryAVLTree);
     system("pause > nul");
 }
 
 void MenuPrincipal::startMenuBackup() {
-    MenuBackup::start(binaryAVLTree);
+   // MenuBackup::start(binaryAVLTree);
 }
 
 void MenuPrincipal::printImage() {
-    const std::string BITMAP_FILE_NAME{"imagen.bmp"};
-    PrintBitmap::printImage(BITMAP_FILE_NAME);
+   // const std::string BITMAP_FILE_NAME{"imagen.bmp"};
+    //PrintBitmap::printImage(BITMAP_FILE_NAME);
 }
 
 void MenuPrincipal::generatePDF() {
-    PDFManager::generatePDF(binaryAVLTree);
+    //PDFManager::generatePDF(binaryAVLTree);
 }
 
 void MenuPrincipal::openHelp() {
