@@ -1,4 +1,4 @@
-#include "Imagen.hpp" 
+#include "Imagen.h" 
 #include <conio.h>
 using namespace std;
 

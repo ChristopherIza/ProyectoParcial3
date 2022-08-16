@@ -5,7 +5,7 @@
 #include <sstream>
 #pragma once
 #include <stdio.h>
-#include "EasyBMP.hpp"
+#include "EasyBMP.h"
 
 class Imagen {
 	// Private section

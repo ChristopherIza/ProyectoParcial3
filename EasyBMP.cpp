@@ -1,6 +1,6 @@
 
 
-#include "EasyBMP.hpp"
+#include "EasyBMP.h"
 
 /* These functions are defined in EasyBMP.h */
 
