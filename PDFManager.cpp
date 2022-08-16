@@ -94,7 +94,7 @@ static void demoThree(PDF &p)
    p.showTextXY("  A J E D R E Z ",170, 710);
    //************************Pie de Página************************************
    p.setFont(PDF::TIMES_BOLD,10);
-   p.showTextXY("Autores:      Iza Christopher    - * -    Rea Denise     - * -    De Veintimilla Luca     - * -    Vargas Kevin    ",30, 20);
+   p.showTextXY("Autores:      Iza Christopher    - * -    Rea Denise     - * -    De Veintemilla Luca     - * -    Vargas Kevin    ",30, 20);
 }
 
 void PDFManager::generatePDF()
