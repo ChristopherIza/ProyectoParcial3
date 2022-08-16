@@ -11,7 +11,7 @@
 #ifndef PDF_MANAGER_HPP
 #define PDF_MANAGER_HPP
 #include <string>
-#include "pdf.hpp"
+//#include "pdf.hpp"
 
 
 class PDFManager

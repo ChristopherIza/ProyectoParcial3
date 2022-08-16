@@ -2,7 +2,7 @@
 #include "MenuGUI.hpp"
 #include "Input.hpp"
 #include "GlobalVariables.hpp"
-//#include "PDFManager.hpp"
+#include "PDFManager.hpp"
 #include "ConsoleDataInput.hpp"
 #include <iostream>
 #include "Imagen.h"
@@ -109,7 +109,8 @@ void MenuPrincipal::printImage() {
 }
 
 void MenuPrincipal::generatePDF() {
-   // PDFManager::generatePDF(binaryAVLTree);
+    PDFManager pd;
+    pd.generatePDF();
 }
 
 void MenuPrincipal::openHelp() {

@@ -14,6 +14,7 @@
 #include <fstream>
 #include <cmath>
 #include "PDFManager.hpp"
+#include "pdf.hpp"
 
 #include <vector>
 
