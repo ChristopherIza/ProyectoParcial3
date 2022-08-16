@@ -17,14 +17,13 @@
 #include "ValidateUser.hpp"
 #include <string.h>
 #include <iostream>
-using namespace std;
 MenuGUI MenuLogin::innerMenuLogin;
-static constexpr short MINIMUM_CHARACTERS{1};
-static constexpr short MAXIMUM_CHARACTERS{15};
-static constexpr short MAXIMUM_CHAR_IDS{10};
+const short MINIMUM_CHARACTERS{1};
+const short MAXIMUM_CHARACTERS{15};
+const short MAXIMUM_CHAR_IDS{10};
 
-string MenuLogin::id;
-string MenuLogin::password;
+std::string MenuLogin::id;
+std::string MenuLogin::password;
 
 bool MenuLogin::switchOption(int selectedOption){
     switch (selectedOption) {
@@ -49,13 +48,13 @@ bool MenuLogin::switchOption(int selectedOption){
 void MenuLogin::enterUser(){
     std::cout << "Ingresa su usuario: ";
     ConsoleDataInput input;
-    id = input.digits(MAXIMUM_CHAR_IDS,MAXIMUM_CHAR_IDS,31,11);
+    id = std::string{input.digits(MAXIMUM_CHAR_IDS,MAXIMUM_CHAR_IDS,31,11)};
 }
 
 void MenuLogin::enterPassword(){ 
     std::cout << "Ingresa su clave: ";
     ConsoleDataInput input;
-    password = input.alphanumeric(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,30,11);
+    password = std::string{input.alphanumeric_password(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,30,11)};
 }
 
 void MenuLogin::enterMainMenu(){

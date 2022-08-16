@@ -1,24 +1,24 @@
 /**
- * @file Node.hpp
- * @author Grupo 1 y Grupo 20
- * @brief Node class
- * @brief Github: https://github.com/ChristopherIza/Arboles_AVL.git
+ * UNIVERSIDAD DE LAS FUERZAS ARMADAS - ESPE
+ * @file MenuLogin.hpp
+ * @author Grupo 1 y 20
+ * @brief Menu that manages the login submenu
+ * Github: https://github.com/ChristopherIza/Arboles_AVL.git
  * @version 0.1
- * @date 2022-07-10
- * 
+ * @date 2022-07-19
+ * Date last modification: 2022-07-19
  * @copyright Copyright (c) 2022
  * 
  */
 #ifndef MENULOGIN_HPP
 #define MENULOGIN_HPP
 #include <string>
-using namespace std;
 class MenuGUI;
 class MenuLogin {
     private:
 
-    static string id;
-    static string password;
+    static std::string id;
+    static std::string password;
 
     static MenuGUI innerMenuLogin;
     /**

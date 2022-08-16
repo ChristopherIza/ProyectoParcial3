@@ -1,17 +1,14 @@
 #include "MenuPrincipal.hpp"
 #include "MenuGUI.hpp"
-//#include "MenuBackup.hpp"
-//#include "Tree.hpp"
 #include "Input.hpp"
-//#include "PrintTree.hpp"
-//#include "PrintBitMap.hpp"
-//#include "FileManager.hpp"
+#include "GlobalVariables.hpp"
 //#include "PDFManager.hpp"
 #include "ConsoleDataInput.hpp"
 #include <iostream>
+#include "Imagen.h"
 
 MenuGUI MenuPrincipal::menuGraphic;
-//Tree MenuPrincipal::binaryAVLTree;
+
 
 bool MenuPrincipal::switchOption(int optionSelected) {
     switch (optionSelected) {
@@ -32,6 +29,7 @@ bool MenuPrincipal::switchOption(int optionSelected) {
             break;
         case 6:
             printImage();
+            
             break;
         case 7:
             generatePDF();
@@ -54,9 +52,9 @@ void MenuPrincipal::insertValue() {
     int dato;
     ConsoleDataInput console;
     dato = console.integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS,45,16);
-    //binaryAVLTree.add(dato);
+    /*binaryAVLTree.add(dato);
 
-   /* if (FileManager::saveTree(binaryAVLTree))
+    if (FileManager::saveTree(binaryAVLTree))
         std::cout << "\nArbol guardado en txt con exito\n";
     else
         std::cout << "\nInformacion de arbol no guardada en txt\n";
@@ -71,9 +69,9 @@ void MenuPrincipal::deleteValue() {
     int dato;
     ConsoleDataInput console;
     dato = console.integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS,45,16);
-   // binaryAVLTree.remove(dato);
+   /* binaryAVLTree.remove(dato);
 
-    /*if (FileManager::saveTree(binaryAVLTree))
+    if (FileManager::saveTree(binaryAVLTree))
         std::cout << "\nArbol guardado en txt con exito\n";
     else
         std::cout << "\nInformacion de arbol no guardada en txt\n";
@@ -87,27 +85,31 @@ void MenuPrincipal::searchValue() {
     ConsoleDataInput console;
     dato = console.integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS,45,16);
 
-    //std::cout << (binaryAVLTree.search(dato) ? "Valor encontrado" : "Valor no encontrado");
+   /* std::cout << (binaryAVLTree.search(dato) ? "Valor encontrado" : "Valor no encontrado");
+   */
     system("pause > nul");
 }
 
 void MenuPrincipal::printTree() {
     system("cls");
-    //PrintTree::printGraphic(binaryAVLTree);
+   // PrintTree::printGraphic(binaryAVLTree);
     system("pause > nul");
 }
 
 void MenuPrincipal::startMenuBackup() {
-   // MenuBackup::start(binaryAVLTree);
+    //MenuBackup::start(binaryAVLTree);
 }
 
 void MenuPrincipal::printImage() {
-   // const std::string BITMAP_FILE_NAME{"imagen.bmp"};
-    //PrintBitmap::printImage(BITMAP_FILE_NAME);
+    Imagen image;
+     system("cls");
+    image.Imagenes();
+    system("pause>nul");
+    //GlobalVariables::printImageAvailable = true;
 }
 
 void MenuPrincipal::generatePDF() {
-    //PDFManager::generatePDF(binaryAVLTree);
+   // PDFManager::generatePDF(binaryAVLTree);
 }
 
 void MenuPrincipal::openHelp() {

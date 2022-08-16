@@ -19,7 +19,7 @@ void Marquee::gotoXY(int x,int y ){
 
 void Marquee::displayMarquee(){
     int a=0,  c=1 ;
-char t[25] ="Ajedrez";
+char t[25] ="Arbol AVL";
 do
 {
 for (a=27;a<=66;a++)
@@ -36,7 +36,12 @@ gotoXY(66,1);
 std::cout<<"             ";
 gotoXY(a-13,1);
 Sleep (400);
+    /* if (kbhit()) {
+        if (getch () == 27) {
+            return;
+        }
+    } */
 }
 }while ((c=1));
-getch ();
+getch();
 }

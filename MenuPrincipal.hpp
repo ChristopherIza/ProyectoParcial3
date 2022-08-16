@@ -15,12 +15,12 @@
 #define MENU_PRINCIPAL_HPP
 
 class MenuGUI;
-//class Tree;
+class Tree;
 
 class MenuPrincipal {
     private:
         static MenuGUI menuGraphic;
-        //static Tree binaryAVLTree;
+        static Tree binaryAVLTree;
         static constexpr short MINIMUM_DIGITS{1};
         static constexpr short MAXIMUM_DIGITS{4};
 

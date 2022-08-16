@@ -18,16 +18,15 @@
 #include "IdVerificator.hpp"
 #include <string.h>
 #include <iostream>
-using namespace std;
-static constexpr short MINIMUM_CHARACTERS{1};
-static constexpr short MAXIMUM_CHARACTERS{15};
-static constexpr short MAXIMUM_CHAR_IDS{10};
+const short MINIMUM_CHARACTERS{1};
+const short MAXIMUM_CHARACTERS{15};
+const short MAXIMUM_CHAR_IDS{10};
 
 MenuGUI MenuSignup::innerMenuSignup;
-string MenuSignup::name;
-string MenuSignup::lastname;
-string MenuSignup::id;
-string MenuSignup::password;
+std::string MenuSignup::name;
+std::string MenuSignup::lastname;
+std::string MenuSignup::id;
+std::string MenuSignup::password;
 
 bool MenuSignup::switchOption(int selectedOption){
     switch (selectedOption) {
@@ -58,24 +57,24 @@ bool MenuSignup::switchOption(int selectedOption){
 void MenuSignup::registerName(){
     std::cout << "Ingresa su Nombre: ";
     ConsoleDataInput input;
-    name = input.word(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,31,13);
+    name = std::string{input.word(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,31,13)};
 }
 
 void MenuSignup::registerLastName(){ 
     std::cout << "Ingresa su Apellido: ";
     ConsoleDataInput input;
-    lastname = input.word(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,33,13);
+    lastname = std::string{input.word(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,33,13)};
 }
 
 void MenuSignup::registerPassword(){
-    std::cout << "Ingresa su Apellido: ";
+    std::cout << "Ingresa su Clave: ";
     ConsoleDataInput input;
-    password = input.alphanumeric(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,33,13);
+    password = std::string{input.alphanumeric(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,33,13)};
 }
 void MenuSignup::registerID(){
-    std::cout << "Ingresa su Apellido: ";
+    std::cout << "Ingresa su Cedula: ";
     ConsoleDataInput input;
-    id = input.digits(MAXIMUM_CHAR_IDS,MAXIMUM_CHAR_IDS,33,13);
+    id = std::string{input.digits(MAXIMUM_CHAR_IDS,MAXIMUM_CHAR_IDS,33,13)};
 }
 void MenuSignup::createAccount(){
     if(IdVerificator::isValid(id)){
