@@ -68,12 +68,12 @@ void MenuSignup::registerLastName(){
 }
 
 void MenuSignup::registerPassword(){
-    std::cout << "Ingresa su Apellido: ";
+    std::cout << "Ingresa su Clave: ";
     ConsoleDataInput input;
     password = input.alphanumeric(MINIMUM_CHARACTERS,MAXIMUM_CHARACTERS,33,13);
 }
 void MenuSignup::registerID(){
-    std::cout << "Ingresa su Apellido: ";
+    std::cout << "Ingresa su Cedula: ";
     ConsoleDataInput input;
     id = input.digits(MAXIMUM_CHAR_IDS,MAXIMUM_CHAR_IDS,33,13);
 }
