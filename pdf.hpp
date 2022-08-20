@@ -17,14 +17,14 @@
       unsigned char mGreen;
       unsigned char mBlue;
 
-      /*RGB(
+      RGB(
          unsigned char red,
          unsigned char green,
          unsigned char blue
       )  :
          mRed(red), mGreen(green), mBlue(blue)
       {
-      }*/
+      }
    };
 
    typedef vector<RGB>      ImageRow;
