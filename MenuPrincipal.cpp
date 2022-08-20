@@ -6,6 +6,7 @@
 #include "ConsoleDataInput.hpp"
 #include <iostream>
 #include "Imagen.h"
+#include "play.hpp"
 
 MenuGUI MenuPrincipal::menuGraphic;
 
@@ -92,6 +93,8 @@ void MenuPrincipal::searchValue() {
 
 void MenuPrincipal::printTree() {
     system("cls");
+    play p;
+    p.start();
    // PrintTree::printGraphic(binaryAVLTree);
     system("pause > nul");
 }
