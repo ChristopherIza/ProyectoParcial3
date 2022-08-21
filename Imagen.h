@@ -8,12 +8,25 @@
 #include "EasyBMP.h"
 
 class Imagen {
-	// Private section
 	public:
+	/**
+	 * @brief 
+	 * 
+	 */
 	void Imagenes();
+
+	/**
+	 * @brief 
+	 * 
+	 * @return int 
+	 */
 	int runIMG();
+
+	/**
+	 * @brief 
+	 * 
+	 * @param imagePath 
+	 * @param console 
+	 */
 	void drawImage(std::string imagePath, HDC* console);
-	
-
-
 };
