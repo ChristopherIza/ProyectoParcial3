@@ -1,6 +1,6 @@
 /**
  * @file chess.h
- * @author De Veintimilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
+ * @author De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
  * @brief // Descripción de la clase 
  * @version 0.1
  * @date 2022-08-20
