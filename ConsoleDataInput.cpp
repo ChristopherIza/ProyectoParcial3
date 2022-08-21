@@ -1,6 +1,8 @@
 /**
+ * UNIVERSIDAD DE LAS FUERZAS ARMADAS - ESPE
+ * 
  * @file ConsoleDataInput.cpp
- * @author your name (you@domain.com)
+ * @author De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
  * @brief 
  * @version 0.1
  * @date 2022-08-20
