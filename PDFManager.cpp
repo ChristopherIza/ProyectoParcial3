@@ -30,6 +30,7 @@ static void demoThree(PDF &p)
 {
    PDFManager pd;
    vector<std::string> texto;
+   string nombreArch;
    vector<XY> points;
    ImageRow row1;
    ImageRow row2;
@@ -99,7 +100,8 @@ static void demoThree(PDF &p)
    p.showTextXY("Autores:      Iza Christopher    - * -    Rea Denise     - * -    De Veintemilla Luca     - * -    Vargas Kevin    ",30, 20);
 
    //*************************Contenido******************************************
-   texto= pd.Obtener_datos("Datos_juego.dat");
+   nombreArch =pd.IngresarNombre();
+   texto= pd.Obtener_datos(nombreArch);
    for (int i = 0; i < texto.size(); i++)
    {
       p.setFont(PDF::TIMES_BOLD,15);
@@ -152,7 +154,7 @@ bool PDFManager:: verif_nombreArch(std::string nombre)
 {
     bool Verif;
     std::ofstream lectura;
-    lectura.open(nombre+".txt",std::ios::in);
+    lectura.open(nombre+".dat",std::ios::in);
     if (!lectura.is_open())
     {
     Verif=true;
@@ -172,5 +174,5 @@ std::string PDFManager::IngresarNombre()
     std::cout<<"\n Digite el nombre del archivo a generar el informe"<<std::endl;
     std::cin>>nombreArc;
     }
-    return nombreArc;
+    return nombreArc+".dat";
 }
