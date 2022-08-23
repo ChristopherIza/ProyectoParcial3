@@ -68,7 +68,7 @@ void MenuPrincipal::generatePDF() {
 }
 
 void MenuPrincipal::openHelp() {
-    system("start ajedrez.chm");
+    system("start Ajedrez.chm");
     system("pause > nul");
 }
 
