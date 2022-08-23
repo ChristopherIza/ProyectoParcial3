@@ -41,7 +41,7 @@ int Imagen::runIMG() {
 
 
     std::cout << std::endl;
-    drawImage("bulbasaur.bmp", &dc);
+    drawImage("Foto.bmp", &dc);
     _getch();
 
     SetCurrentConsoleFontEx(output, FALSE, &Font);

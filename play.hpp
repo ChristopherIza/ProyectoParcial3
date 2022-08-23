@@ -17,7 +17,7 @@
 using namespace std;
 
 #include "user_interface.h"
-#include "chess.h"
+//#include "chess.h"
 
 class play{
     public:

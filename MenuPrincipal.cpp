@@ -26,31 +26,18 @@ MenuGUI MenuPrincipal::menuGraphic;
 bool MenuPrincipal::switchOption(int optionSelected) {
     switch (optionSelected) {
         case 1:
-            insertValue();
-            break;
-        case 2:
-            deleteValue();
-            break;
-        case 3:
-            searchValue();
-            break;
-        case 4:
             printTree();
             break;
-        case 5:
-            startMenuBackup();
+        case 2:
+            printImage();    
             break;
-        case 6:
-            printImage();
-            
-            break;
-        case 7:
+        case 3:
             generatePDF();
             break;
-        case 8:
+        case 4:
             openHelp();
             break;
-        case 9:
+        case 5:
             signOut();
             return true;
             break;
@@ -140,14 +127,10 @@ void MenuPrincipal::signOut() {
 void MenuPrincipal::start() {
     menuGraphic.setTitleMenu("MENU PRINCIPAL");
 
-    const size_t AMOUNT_OPTIONS{9};
+    const size_t AMOUNT_OPTIONS{5};
     menuGraphic.setListOptions(
         new std::string[AMOUNT_OPTIONS] {
-            "Insertar valor",
-            "Eliminar valor",
-            "Buscar valor",
-            "Imprimir arbol",
-            "Backup",
+            "Abrir Ajedrez",
             "Imprimir imagen",
             "Generar PDF",
             "Ayuda",

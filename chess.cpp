@@ -1,5 +1,5 @@
 #include "includes.h"
-#include "chess.h"
+//#include "chess.h"
 #include "user_interface.h"
 
 
@@ -75,7 +75,7 @@ std::string Chess::describePiece(char chPiece)
 
          default:
          {
-            description += "unknow piece";
+            description += "Piez desconocida";
          }
          break;
       }
@@ -1114,7 +1114,7 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
          // If the piece wants to move from column 0 to column 7, we must check if columns 1-6 are free
          if (startingPos.iColumn == finishingPos.iColumn)
          {
-            cout << "Error. Movement is horizontal but column is the same\n";
+            cout << "Error. El movimiento es horizontal pero la columna es la misma\n";
          }
 
          // Moving to the right
@@ -1128,7 +1128,7 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
                if (isSquareOccupied(startingPos.iRow, i))
                {
                   bFree = false;
-                  cout << "Horizontal path to the right is not clear!\n";
+                  cout << "El camino hacia la derecha no esta libre!\n";
                }
             }
          }
@@ -1144,7 +1144,7 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
                if (isSquareOccupied(startingPos.iRow, i))
                {
                   bFree = false;
-                  cout << "Horizontal path to the left is not clear!\n";
+                  cout << "El camino hacia la izquierda no esta libre!\n";
                }
             }
          }
@@ -1157,8 +1157,8 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
          // If the piece wants to move from column 0 to column 7, we must check if columns 1-6 are free
          if (startingPos.iRow == finishingPos.iRow)
          {
-            cout << "Error. Movement is vertical but row is the same\n";
-           throw("Error. Movement is vertical but row is the same");
+            cout << "Error. El movimiento es vertical pero la fila es la misma\n";
+           throw("Error. El movimiento es vertical pero la fila es la misma");
          }
 
          // Moving up
@@ -1172,7 +1172,7 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
                if ( isSquareOccupied(i, startingPos.iColumn) )
                {
                   bFree = false;
-                  cout << "Vertical path up is not clear!\n";
+                  cout << "El camino hacia arriba no esta libre!\n";
                }
             }
          }
@@ -1188,7 +1188,7 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
                if ( isSquareOccupied(i, startingPos.iColumn) )
                {
                   bFree = false;
-                  cout << "Vertical path down is not clear!\n";
+                  cout << "El camino hacia abajo no esta libre!\n";
                }
             }
          }
@@ -1208,7 +1208,7 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
                if (isSquareOccupied(startingPos.iRow + i, startingPos.iColumn + i))
                {
                   bFree = false;
-                  cout << "Diagonal path up-right is not clear!\n";
+                  cout << "Diagonal superior derecha no esta libre!\n";
                }
             }
          }
@@ -1224,7 +1224,7 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
                if (isSquareOccupied(startingPos.iRow+i, startingPos.iColumn-i))
                {
                   bFree = false;
-                  cout << "Diagonal path up-left is not clear!\n";
+                  cout << "Diagonal superior izquierda no esta libre!\n";
                }
             }
          }
@@ -1240,7 +1240,7 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
                if (isSquareOccupied(startingPos.iRow - i, startingPos.iColumn + i))
                {
                   bFree = false;
-                  cout << "Diagonal path down-right is not clear!\n";
+                  cout << "Diagonal inferior derecha no esta libre!\n";
                }
             }
          }
@@ -1256,14 +1256,14 @@ bool Game::isPathFree(Position startingPos, Position finishingPos, int iDirectio
                if (isSquareOccupied(startingPos.iRow - i, startingPos.iColumn - i))
                {
                   bFree = false;
-                  cout << "Diagonal path down-left is not clear!\n";
+                  cout << "Diagonal inferior izquierda no esta libre!\n";
                }
             }
          }
 
          else
          {
-            throw("Error. Diagonal move not allowed");
+            throw("Error. Movimiento diagonal no permitido");
          }
       }
       break;
@@ -1286,7 +1286,7 @@ bool Game::canBeBlocked(Position startingPos, Position finishingPos, int iDirect
          // If the piece wants to move from column 0 to column 7, we must check if columns 1-6 are free
          if (startingPos.iColumn == finishingPos.iColumn)
          {
-            cout << "Error. Movement is horizontal but column is the same\n";
+            cout << "Error.El movimiento es horizontal pero la columna es la misma\n";
          }
 
          // Moving to the right
@@ -1323,8 +1323,8 @@ bool Game::canBeBlocked(Position startingPos, Position finishingPos, int iDirect
          // If the piece wants to move from column 0 to column 7, we must check if columns 1-6 are free
          if (startingPos.iRow == finishingPos.iRow)
          {
-            cout << "Error. Movement is vertical but row is the same\n";
-           throw("Error. Movement is vertical but row is the same");
+            cout << "Error. El movimiento es vertical pero la fila es la misma\n";
+           throw("Error. El movimiento es vertical pero la fila es la misma");
          }
 
          // Moving up
@@ -1411,8 +1411,8 @@ bool Game::canBeBlocked(Position startingPos, Position finishingPos, int iDirect
 
          else
          {
-            cout << "Error. Diagonal move not allowed\n";
-            throw("Error. Diagonal move not allowed");
+            cout << "Error. Movimiento diagonal no permitido\n";
+            throw("Error. Movimiento diagonal no permitido");
          }
       }
       break;

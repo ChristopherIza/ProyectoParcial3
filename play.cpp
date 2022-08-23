@@ -1,4 +1,5 @@
 #include "play.hpp"
+
 #include "debug.h"
 
 bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::EnPassant* S_enPassant, Chess::Castling* S_castling, Chess::Promotion* S_promotion){
@@ -81,7 +82,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
             // Did the pawn have a double move forward and was it an adjacent column?
             if ( 2 == abs(LastMoveTo.iRow - LastMoveFrom.iRow) && 1 == abs(LastMoveFrom.iColumn - present.iColumn) )
             {
-               cout << "En passant move!\n";
+               cout << "Peon al paso!\n";
                bValid = true;
 
                S_enPassant->bApplied = true;
@@ -99,7 +100,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
                if (EMPTY_SQUARE != current_game->getPieceAtPosition(future.iRow, future.iColumn))
                {
                   bValid = true;
-                  cout << "Pawn captured a piece!\n";
+                  cout << "El peon a tomado una pieza!\n";
                }
             }
          }
@@ -113,7 +114,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
          if ( (Chess::isWhitePiece( chPiece ) && 7 == future.iRow) ||
               (Chess::isBlackPiece( chPiece ) && 0 == future.iRow) )
          {
-            cout << "Pawn must be promoted!\n";
+            cout << "El peon a coronado!\n";
             S_promotion->bApplied = true;
          }
       }
@@ -247,7 +248,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
                // if future.iColumn is greather, it means king side
                if ( false == current_game->castlingAllowed(Chess::Side::KING_SIDE, Chess::getPieceColor(chPiece) ) )
                {
-                  createNextMessage("Castling to the king side is not allowed.\n");
+                  createNextMessage("EL enroque no está permitido\n");
                   return false;
                }
                else
@@ -276,7 +277,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
                // if present.iColumn is greather, it means queen side
                if (false == current_game->castlingAllowed(Chess::Side::QUEEN_SIDE, Chess::getPieceColor(chPiece)))
                {
-                  createNextMessage("Castling to the queen side is not allowed.\n");
+                  createNextMessage("El enroque no está permitido.\n");
                   return false;
                }
                else
@@ -314,7 +315,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
    // If it is a move in an invalid direction, do not even bother to check the rest
    if ( false == bValid )
    {
-      cout << "Piece is not allowed to move to that square\n";
+      cout << "No es permitido mover la pieza a ese cuadro\n";
       return false;
    }
 
@@ -327,7 +328,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
       char chAuxPiece = current_game->getPieceAtPosition(future.iRow, future.iColumn);
       if ( Chess::getPieceColor(chPiece) == Chess::getPieceColor(chAuxPiece) )
       {
-         cout << "Position is already taken by a piece of the same color\n";
+         cout << "La posicion está tomada por una pieza del mismo color\n";
          return false;
       }
    }
@@ -337,7 +338,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
    // ----------------------------------------------
    if ( true == current_game->wouldKingBeInCheck(chPiece, present, future, S_enPassant) )
    {
-      cout << "Move would put player's king in check\n";
+      cout << "Movimiento pone en Jaque al rey\n";
       return false;
    }
 
@@ -356,22 +357,22 @@ void play::makeTheMove(Chess::Position present, Chess::Position future, Chess::E
 
       if ( Chess::getPieceColor(chPiece) != Chess::getPieceColor(chAuxPiece))
       {
-         createNextMessage(Chess::describePiece(chAuxPiece) + " captured!\n");
+         createNextMessage(Chess::describePiece(chAuxPiece) + " Capturado!\n");
       }
       else
       {
-         cout << "Error. We should not be making this move\n";
-         throw("Error. We should not be making this move");
+         cout << "Error. No deberia realizar este movimiento.\n";
+         throw("Error. No deberia realizar este movimiento");
       }
    }
    else if (true == S_enPassant->bApplied)
    {
-      createNextMessage("Pawn captured by \"en passant\" move!\n");
+      createNextMessage("Peo capturado al paso!\n");
    }
 
    if ( (true == S_castling->bApplied) )
    {
-      createNextMessage("Castling applied!\n");
+      createNextMessage("Enroque realizado!\n");
    }
 
    current_game->movePiece(present, future, S_enPassant, S_castling, S_promotion);
@@ -388,25 +389,25 @@ void play::newGame(void){
 void play::undoMove(void){
     if ( false == current_game->undoIsPossible() )
    {
-      createNextMessage("Undo is not possible now!\n");
+      createNextMessage("No es posible deshacer el movimiento!\n");
       return;
    }
 
    current_game->undoLastMove();
-   createNextMessage("Last move was undone\n");
+   createNextMessage("Se deshizo el ultimo movimiento \n");
 }
 void play::movePiece(void){
     std::string to_record;
 
    // Get user input for the piece they want to move
-   cout << "Choose piece to be moved. (example: A1 or b2): ";
+   cout << "Elija la posicion de la pieza que desea mover. (Ejemplo: A1 or b2): ";
 
    std::string move_from;
    getline(cin, move_from);
 
    if ( move_from.length() > 2 )
    {
-      createNextMessage("You should type only two characters (column and row)\n");
+      createNextMessage("Solo debe ingresar dos caracteres (columna y fila)\n");
       return;
    }
 
@@ -425,13 +426,13 @@ void play::movePiece(void){
 
    if ( present.iColumn < 'A' || present.iColumn > 'H' )
    {
-      createNextMessage("Invalid column.\n");
+      createNextMessage("Columna invalida.\n");
       return;
    }
 
    if ( present.iRow < '0' || present.iRow > '8' )
    {
-      createNextMessage("Invalid row.\n");
+      createNextMessage("Fila invalida.\n");
       return;
    }
 
@@ -447,11 +448,11 @@ void play::movePiece(void){
    present.iRow  = present.iRow  - '1';
 
    char chPiece = current_game->getPieceAtPosition(present.iRow, present.iColumn);
-   cout << "Piece is " << char(chPiece) << "\n";
+   cout << "La pieza es " << char(chPiece) << "\n";
 
    if ( 0x20 == chPiece )
    {
-      createNextMessage("You picked an EMPTY square.\n");
+      createNextMessage("Selecciono una posicion vacia.\n");
       return;
    }
 
@@ -459,7 +460,7 @@ void play::movePiece(void){
    {
       if ( false == Chess::isWhitePiece(chPiece) )
       {
-         createNextMessage("It is WHITE's turn and you picked a BLACK piece\n");
+         createNextMessage("Es el turno de las Blancas y eligio una pieza Negra\n");
          return;
       }
    }
@@ -467,7 +468,7 @@ void play::movePiece(void){
    {
       if ( false == Chess::isBlackPiece(chPiece) )
       {
-         createNextMessage("It is BLACK's turn and you picked a WHITE piece\n");
+         createNextMessage("Es el turno de las Negras y eligio una pieza Blanca\n");
          return;
       }
    }
@@ -481,7 +482,7 @@ void play::movePiece(void){
 
    if ( move_to.length() > 2 )
    {
-      createNextMessage("You should type only two characters (column and row)\n");
+      createNextMessage("Solo debe ingresar dos caracteres (columna y fila)\n");
       return;
    }
 
@@ -499,13 +500,13 @@ void play::movePiece(void){
 
    if ( future.iColumn < 'A' || future.iColumn > 'H' )
    {
-      createNextMessage("Invalid column.\n");
+      createNextMessage("Columna invalida.\n");
       return;
    }
 
    if ( future.iRow < '0' || future.iRow > '8' )
    {
-      createNextMessage("Invalid row.\n");
+      createNextMessage("Fila invalida.\n");
       return;
    }
 
@@ -522,7 +523,7 @@ void play::movePiece(void){
    // Check if it is not the exact same square
    if ( future.iRow == present.iRow && future.iColumn == present.iColumn )
    {
-      createNextMessage("[Invalid] You picked the same square!\n");
+      createNextMessage("[Invalido] Eligio la misma posicion!\n");
       return;
    }
 
@@ -533,7 +534,7 @@ void play::movePiece(void){
 
    if ( false == isMoveValid(present, future, &S_enPassant, &S_castling, &S_promotion) )
    {
-      createNextMessage("[Invalid] Piece can not move to that square!\n");
+      createNextMessage("[Invalido] la pieza no se puede mover a esa posicion!\n");
       return;
    }
    
@@ -543,13 +544,13 @@ void play::movePiece(void){
    // ---------------------------------------------------
    if ( S_promotion.bApplied == true )
    {
-      cout << "Promote to (Q, R, N, B): ";
+      cout << "Coronar a: (Q, R, N, B): ";
       std::string piece;
       getline(cin, piece);
 
       if ( piece.length() > 1 )
       {
-         createNextMessage("You should type only one character (Q, R, N or B)\n");
+         createNextMessage("Solo puede escoger entre (Q, R, N or B)\n");
          return;
       }
 
@@ -557,7 +558,7 @@ void play::movePiece(void){
 
       if ( chPromoted != 'Q' && chPromoted != 'R' && chPromoted != 'N' && chPromoted != 'B' )
       {
-         createNextMessage("Invalid character.\n");
+         createNextMessage("Caracter invalido.\n");
          return;
       }
 
@@ -597,11 +598,11 @@ void play::movePiece(void){
       {
          if (Chess::WHITE_PLAYER == current_game->getCurrentTurn())
          {
-            appendToNextMessage("Checkmate! Black wins the game!\n");
+            appendToNextMessage("Jaque Mate. Las piezas negras ganan!\n");
          }
          else
          {
-            appendToNextMessage("Checkmate! White wins the game!\n");
+            appendToNextMessage("Jaque Mate. Las piezas blancas ganan!\n");
          }
       }
       else
@@ -610,11 +611,11 @@ void play::movePiece(void){
          // there is already one message (e.g., piece captured)
          if (Chess::WHITE_PLAYER == current_game->getCurrentTurn())
          {
-            appendToNextMessage("White king is in check!\n");
+            appendToNextMessage("El rey Blanco esta en jaque!\n");
          }
          else
          {
-            appendToNextMessage("Black king is in check!\n");
+            appendToNextMessage("El rey Negro esta en jaque!\n");
          }
       }
    }
@@ -623,7 +624,7 @@ void play::movePiece(void){
 }
 void play::saveGame(void){
     string file_name;
-   cout << "Type file name to be saved (no extension): ";
+   cout << "Ingrese el nombre del archivo a guardar (sin extension): ";
 
    getline(cin, file_name);
    file_name += ".dat";
@@ -634,7 +635,7 @@ void play::saveGame(void){
       // Write the date and time of save operation
       auto time_now = std::chrono::system_clock::now();
       std::time_t end_time = std::chrono::system_clock::to_time_t(time_now);
-      ofs << "[Chess console] Saved at: " << std::ctime(&end_time);
+      ofs << "Guardado a: " << std::ctime(&end_time);
 
       // Write the moves
       for (unsigned i = 0; i < current_game->rounds.size(); i++)
@@ -643,18 +644,18 @@ void play::saveGame(void){
       }
 
       ofs.close();
-      createNextMessage("Game saved as " + file_name + "\n");
+      createNextMessage("Juego guardado como: " + file_name + "\n");
    }
    else
    {
-      cout << "Error creating file! Save failed\n";
+      cout << "Guardado fallido\n";
    }
 
    return;
 }
 void play::loadGame(void){
     string file_name;
-   cout << "Type file name to be loaded (no extension): ";
+   cout << "Ingrese el nombre del archivo a cargar (sin extension):";
 
    getline(cin, file_name);
    file_name += ".dat";
@@ -710,7 +711,7 @@ void play::loadGame(void){
                  to.iColumn   < 0 || to.iColumn   > 7 ||
                  to.iRow      < 0 || to.iRow      > 7 )
             {
-               createNextMessage("[Invalid] Can't load this game because there are invalid lines!\n");
+               createNextMessage("No se puede cargar el juego, las lineas estan erroneas!\n");
 
                // Clear everything and return
                current_game = new Game();
@@ -724,7 +725,7 @@ void play::loadGame(void){
 
             if ( false == isMoveValid(from, to, &S_enPassant, &S_castling, &S_promotion) )
             {
-               createNextMessage("[Invalid] Can't load this game because there are invalid moves!\n");
+               createNextMessage("No se puede cargar el juego los movimientos estan mal!\n");
 
                // Clear everything and return
                current_game = new Game();
@@ -738,7 +739,7 @@ void play::loadGame(void){
             {
                if ( chPromoted != 'Q' && chPromoted != 'R' && chPromoted != 'N' && chPromoted != 'B' )
                {
-                  createNextMessage("[Invalid] Can't load this game because there is an invalid promotion!\n");
+                  createNextMessage("No se puede cargar el juego, existe una coronación invalida !\n");
 
                   // Clear everything and return
                   current_game = new Game();
@@ -767,13 +768,13 @@ void play::loadGame(void){
       }
 
       // Extra line after the user input
-      createNextMessage("Game loaded from " + file_name + "\n");
+      createNextMessage("Juego cargado desde " + file_name + "\n");
 
       return;
    }
    else
    {
-      createNextMessage("Error loading " + file_name + ". Creating a new game instead\n");
+      createNextMessage("Error cargando " + file_name + ". Creando nuevo juego \n");
       current_game = new Game();
       return;
    }
@@ -793,12 +794,12 @@ void play::start(){
       printMenu();
 
       // Get input from user
-      cout << "Type here: ";
+      cout << "Ingrese aqui: ";
       getline(cin, input);
 
       if (input.length() != 1)
       {
-         cout << "Invalid option. Type one letter only\n\n";
+         cout << "Opcion invalida, ingrese un solo caracter\n\n";
          continue;
       }
 
@@ -824,7 +825,7 @@ void play::start(){
                {
                   if ( current_game->isFinished() )
                   {
-                     cout << "This game has already finished!\n";
+                     cout << "Este juego ya ha terminado!\n";
                   }
                   else
                   {
@@ -837,7 +838,7 @@ void play::start(){
                }
                else
                {
-                  cout << "No game running!\n";
+                  cout << "Ningun juego corriendo!\n";
                }
                
             }
@@ -863,7 +864,7 @@ void play::start(){
                }
                else
                {
-                  cout << "No game running\n";
+                  cout << "Ningun juego corriendo\n";
                }
             }
             break;
@@ -881,7 +882,7 @@ void play::start(){
                }
                else
                {
-                  cout << "No game running\n";
+                  cout << "Ningun juego corriendo\n";
                }
             }
             break;
@@ -899,7 +900,7 @@ void play::start(){
 
             default:
             {
-               cout << "Option does not exist\n\n";
+               cout << "La opcion no es valida\n\n";
             }
             break;
 
