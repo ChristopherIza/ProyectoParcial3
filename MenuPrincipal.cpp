@@ -1,3 +1,15 @@
+/**
+ * UNIVERSIDAD DE LAS FUERZAS ARMADAS - ESPE
+ * 
+ * @file MenuPrincipal.cpp
+ * @author De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
+ * @brief 
+ * @version 0.1
+ * @date 2022-08-20
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "MenuPrincipal.hpp"
 #include "MenuGUI.hpp"
 #include "Input.hpp"

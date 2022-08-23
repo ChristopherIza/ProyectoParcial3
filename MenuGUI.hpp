@@ -1,7 +1,7 @@
 /**
  * UNIVERSIDAD DE LAS FUERZAS ARMADAS - ESPE
  * @file MenuGUI.hpp
- * @author Grupo 1 y 20
+ * @author De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
  * @brief Class that generate menus on console
  * Github: https://github.com/ChristopherIza/Arboles_AVL.git
  * @version 0.1

@@ -1,6 +1,8 @@
 /**
+ * UNIVERSIDAD DE LAS FUERZAS ARMADAS - ESPE
+ * 
  * @file Node.hpp
- * @author Grupo 1 y Grupo 20
+ * @author  De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
  * @brief Node class
  * @brief Github: https://github.com/ChristopherIza/Arboles_AVL.git
  * @version 0.1

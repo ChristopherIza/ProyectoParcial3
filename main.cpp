@@ -1,7 +1,7 @@
 /*
  * UNIVERSIDAD DE LAS FUERZAS ARMADAS - ESPE
- * Programa que permita hacer uso de la estructura de datos arbol AVL
- * Autor: Grupo 1 y 20
+ * Juego de Ajedrez 
+ * Autor:  De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
  * Fecha de creacion: 2022-07-12
  * Fecha de ultima modificación: 2022-07-13
  * Github: https://github.com/ChristopherIza/Arboles_AVL.git

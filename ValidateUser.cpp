@@ -1,3 +1,13 @@
+/**
+ * @file ValidateUser.cpp
+ * @author De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
+ * @brief 
+ * @version 0.1
+ * @date 2022-08-20
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "ValidateUser.hpp"
 
 bool ValidateUser::validate_Login(string Id, string password)
