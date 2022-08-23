@@ -16,7 +16,7 @@
 #include "PDFManager.hpp"
 #include "pdf.hpp"
 
-#include <vector>
+//#include <vector>
 
 using std::ostringstream;
 using std::ifstream;
@@ -28,7 +28,9 @@ static vector <int> Order;
 
 static void demoThree(PDF &p)
 {
-      vector<XY> points;
+   PDFManager pd;
+   vector<std::string> texto;
+   vector<XY> points;
    ImageRow row1;
    ImageRow row2;
 
@@ -95,6 +97,15 @@ static void demoThree(PDF &p)
    //************************Pie de Página************************************
    p.setFont(PDF::TIMES_BOLD,10);
    p.showTextXY("Autores:      Iza Christopher    - * -    Rea Denise     - * -    De Veintemilla Luca     - * -    Vargas Kevin    ",30, 20);
+
+   //*************************Contenido******************************************
+   texto= pd.Obtener_datos("Datos_juego.dat");
+   for (int i = 0; i < texto.size(); i++)
+   {
+      p.setFont(PDF::TIMES_BOLD,15);
+      p.showTextXY(texto[i],45,650-i*15);
+   }
+   
 }
 
 void PDFManager::generatePDF()
@@ -123,3 +134,43 @@ void PDFManager::generatePDF()
       }
 }
 
+std::vector <std::string> PDFManager:: Obtener_datos(std::string nombre)
+{
+    std::ifstream lectura;
+    std::vector <std::string> el_texto;
+    lectura.open(nombre, std::ios::in);
+    std::string texto;
+    while (!lectura.eof())
+    {
+        std::getline(lectura,texto);
+        el_texto.push_back(texto);
+    }
+    return el_texto;
+}
+
+bool PDFManager:: verif_nombreArch(std::string nombre)
+{
+    bool Verif;
+    std::ofstream lectura;
+    lectura.open(nombre+".txt",std::ios::in);
+    if (!lectura.is_open())
+    {
+    Verif=true;
+    }
+    else
+    {
+    Verif =false;
+    }
+    return Verif;
+}
+
+std::string PDFManager::IngresarNombre()
+{
+    std::string nombreArc="";
+    while (verif_nombreArch(nombreArc))
+    {
+    std::cout<<"\n Digite el nombre del archivo a generar el informe"<<std::endl;
+    std::cin>>nombreArc;
+    }
+    return nombreArc;
+}

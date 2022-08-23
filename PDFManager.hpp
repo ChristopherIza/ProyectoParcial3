@@ -13,6 +13,7 @@
 #ifndef PDF_MANAGER_HPP
 #define PDF_MANAGER_HPP
 #include <string>
+#include <vector>
 //#include "pdf.hpp"
 
 
@@ -26,5 +27,27 @@ public:
      * 
      */
     void generatePDF();
+
+    /**
+     * @brief Obtain data of game
+     * 
+     * @return std::vector <std::string> 
+     */
+    std::vector <std::string> Obtener_datos(std::string);
+
+    /**
+     * @brief 
+     * 
+     * @return true 
+     * @return false 
+     */
+    bool verif_nombreArch(std::string);
+
+    /**
+     * @brief 
+     * 
+     * @return std::string 
+     */
+    std::string IngresarNombre();
 };
 #endif
