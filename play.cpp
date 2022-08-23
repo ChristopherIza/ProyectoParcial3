@@ -627,7 +627,7 @@ void play::saveGame(void){
    cout << "Ingrese el nombre del archivo a guardar (sin extension): ";
 
    getline(cin, file_name);
-   file_name += ".dat";
+   file_name += ".txt";
 
    std::ofstream ofs(file_name);
    if (ofs.is_open())
@@ -635,7 +635,7 @@ void play::saveGame(void){
       // Write the date and time of save operation
       auto time_now = std::chrono::system_clock::now();
       std::time_t end_time = std::chrono::system_clock::to_time_t(time_now);
-      ofs << "Guardado a: " << std::ctime(&end_time);
+      ofs << "[Guardado a]: " << std::ctime(&end_time);
 
       // Write the moves
       for (unsigned i = 0; i < current_game->rounds.size(); i++)
@@ -658,7 +658,7 @@ void play::loadGame(void){
    cout << "Ingrese el nombre del archivo a cargar (sin extension):";
 
    getline(cin, file_name);
-   file_name += ".dat";
+   file_name += ".txt";
 
    std::ifstream ifs(file_name);
 
@@ -830,7 +830,7 @@ void play::start(){
                   else
                   {
                      movePiece();
-                     //clearScreen();
+                     clearScreen();
                      printLogo();
                      printSituation( *current_game );
                      printBoard( *current_game );
@@ -851,13 +851,13 @@ void play::start(){
             }
             break;
 
-            case 'U':
-            case 'u':
+            case 'D':
+            case 'd':
             {
                if (NULL != current_game)
                {
                   undoMove();
-                  //clearScreen();
+                  clearScreen();
                   printLogo();
                   printSituation(*current_game);
                   printBoard(*current_game);
