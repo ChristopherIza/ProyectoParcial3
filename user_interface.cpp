@@ -37,7 +37,7 @@ void printLogo(void)
 
 void printMenu(void)
 {
-   cout << "Commands: (N)ew game\t(M)ove \t(U)ndo \t(S)ave \t(L)oad \t(Q)uit \n";
+   cout << "Comandos: (N)uevo Juego \t(M)ovimiento \t(U)ndo \t(S)ave \t(L)oad \t(Q)uit \n";
 }
 
 void printMessage(void)
@@ -120,7 +120,7 @@ void printSituation(Game& game)
    // Last moves - print only if at least one move has been made
    if ( 0 != game.rounds.size() )
    {
-      cout << "Last moves:\n";
+      cout << "Ultimos movimientos:\n";
 
       int iMoves = game.rounds.size();
       int iToShow = iMoves >= 5 ? 5 : iMoves;
@@ -146,14 +146,14 @@ void printSituation(Game& game)
    if ( 0 != game.white_captured.size() || 0 != game.black_captured.size() )
    {
       cout << "---------------------------------------------\n";
-      cout << "WHITE captured: ";
+      cout << "Pieza blanca capturada: ";
       for (unsigned i = 0; i < game.white_captured.size(); i++)
       {
          cout << char(game.white_captured[i]) << " ";
       }
       cout << "\n";
 
-      cout << "black captured: ";
+      cout << "Pieza negra capturada: ";
       for (unsigned i = 0; i < game.black_captured.size(); i++)
       {
          cout << char(game.black_captured[i]) << " ";
@@ -164,7 +164,7 @@ void printSituation(Game& game)
    }
 
    // Current turn
-   cout << "Current turn: " << (game.getCurrentTurn() == Chess::WHITE_PIECE ? "WHITE (upper case)" : "BLACK (lower case)") << "\n\n";
+   cout << "Turno de : " << (game.getCurrentTurn() == Chess::WHITE_PIECE ? "Blancas (Mayusculas)" : "Negras (minusculas)") << "\n\n";
 
 }
 
@@ -187,5 +187,5 @@ void printBoard(Game& game)
       }
    }
 
-   cout << "\n\n   A     B     C     D     E     F     G     H";
+   cout << "\n\n   A     B     C     D     E     F     G     H\n\n";
 }
