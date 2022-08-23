@@ -154,7 +154,7 @@ bool PDFManager:: verif_nombreArch(std::string nombre)
 {
     bool Verif;
     std::ofstream lectura;
-    lectura.open(nombre+".dat",std::ios::in);
+    lectura.open(nombre+".txt",std::ios::in);
     if (!lectura.is_open())
     {
     Verif=true;
@@ -171,8 +171,8 @@ std::string PDFManager::IngresarNombre()
     std::string nombreArc="";
     while (verif_nombreArch(nombreArc))
     {
-    std::cout<<"\n Digite el nombre del archivo a generar el informe"<<std::endl;
+    std::cout<<"\n Digite el nombre del archivo a generar el informe (sin extension):"<<std::endl;
     std::cin>>nombreArc;
     }
-    return nombreArc+".dat";
+    return nombreArc+".txt";
 }
