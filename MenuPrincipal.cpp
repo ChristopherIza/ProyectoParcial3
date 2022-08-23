@@ -46,61 +46,13 @@ bool MenuPrincipal::switchOption(int optionSelected) {
     return false;
 }
 
-void MenuPrincipal::insertValue() {
-    std::cout << "Ingresa valor entero a guardar: ";
-    //binaryAVLTree.add(Input::integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS));
-    int dato;
-    ConsoleDataInput console;
-    dato = console.integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS,45,16);
-    /*binaryAVLTree.add(dato);
-
-    if (FileManager::saveTree(binaryAVLTree))
-        std::cout << "\nArbol guardado en txt con exito\n";
-    else
-        std::cout << "\nInformacion de arbol no guardada en txt\n";
-*/
-    system("pause > nul");
-}
-
-void MenuPrincipal::deleteValue() {
-    std::cout << "Ingresa valor entero a eliminar: ";
-    //binaryAVLTree.remove(Input::integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS));
-    
-    int dato;
-    ConsoleDataInput console;
-    dato = console.integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS,45,16);
-   /* binaryAVLTree.remove(dato);
-
-    if (FileManager::saveTree(binaryAVLTree))
-        std::cout << "\nArbol guardado en txt con exito\n";
-    else
-        std::cout << "\nInformacion de arbol no guardada en txt\n";
-*/
-    system("pause > nul");
-}
-
-void MenuPrincipal::searchValue() {
-    std::cout << "Ingresa valor entero a buscar: ";
-    int dato;
-    ConsoleDataInput console;
-    dato = console.integerNumber(MINIMUM_DIGITS, MAXIMUM_DIGITS,45,16);
-
-   /* std::cout << (binaryAVLTree.search(dato) ? "Valor encontrado" : "Valor no encontrado");
-   */
-    system("pause > nul");
-}
-
 void MenuPrincipal::printTree() {
     system("cls");
     play p;
     p.start();
-   // PrintTree::printGraphic(binaryAVLTree);
     system("pause > nul");
 }
 
-void MenuPrincipal::startMenuBackup() {
-    //MenuBackup::start(binaryAVLTree);
-}
 
 void MenuPrincipal::printImage() {
     Imagen image;
@@ -116,7 +68,7 @@ void MenuPrincipal::generatePDF() {
 }
 
 void MenuPrincipal::openHelp() {
-    system("start help.chm");
+    system("start ajedrez.chm");
     system("pause > nul");
 }
 
