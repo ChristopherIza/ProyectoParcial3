@@ -92,10 +92,6 @@ public:
 
    const char initial_board[8][8] =
    {
-      // This represents the pieces on the board.
-      // Keep in mind that pieces[0][0] represents A1
-      // pieces[1][1] represents B2 and so on.
-      // Letters in CAPITAL are white
       { 'R',  'N',  'B',  'Q',  'K',  'B',  'N',  'R' },
       { 'P',  'P',  'P',  'P',  'P',  'P',  'P',  'P' },
       { 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20 },
