@@ -94,7 +94,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
          {
             if ( (Chess::isWhitePiece(chPiece) && future.iRow == present.iRow + 1) || (Chess::isBlackPiece(chPiece) && future.iRow == present.iRow - 1))
             {
-               // Only allowed if there is something to be captured in the square
+              
                if (EMPTY_SQUARE != current_game->getPieceAtPosition(future.iRow, future.iColumn))
                {
                   bValid = true;
@@ -118,7 +118,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
       }
       break;
 
-      case 'R':
+      case 'T':
       {
          if ( (future.iRow == present.iRow) && (future.iColumn != present.iColumn) )
          {
@@ -139,7 +139,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
       }
       break;
 
-      case 'N':
+      case 'C':
       {
          if ( (2 == abs(future.iRow - present.iRow)) && (1 == abs(future.iColumn - present.iColumn)) )
          {
@@ -153,7 +153,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
       }
       break;
 
-      case 'B':
+      case 'A':
       {
       
          if ( abs(future.iRow - present.iRow) == abs(future.iColumn - present.iColumn) )
@@ -167,7 +167,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
       }
       break;
 
-      case 'Q':
+      case 'D':
       {
 
          if ( (future.iRow == present.iRow) && (future.iColumn != present.iColumn) )
@@ -200,7 +200,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
       }
       break;
 
-      case 'K':
+      case 'R':
       {
          if ( (future.iRow == present.iRow) && (1 == abs(future.iColumn - present.iColumn) ) )
          {
@@ -299,7 +299,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
 
       default:
       {
-         cout << "!!!!Should not reach here. Invalid piece: " << char(chPiece) << "\n\n\n";
+         cout << "!!!!No debería llegar aquí. Pieza no válida " << char(chPiece) << "\n\n\n";
       }
       break;
    }
@@ -502,25 +502,25 @@ void play::movePiece(void){
 
    if ( false == isMoveValid(present, future, &S_enPassant, &S_castling, &S_promotion) )
    {
-      createNextMessage("[Invalido] la pieza no se puede mover a esa posicion!\n");
+      createNextMessage("[Invalido] La pieza no se puede mover a esa posicion!\n");
       return;
    }
    
    if ( S_promotion.bApplied == true )
    {
-      cout << "Coronar a: (Q, R, N, B): ";
+      cout << "Coronar a (D, T, C, A): ";
       std::string piece;
       getline(cin, piece);
 
       if ( piece.length() > 1 )
       {
-         createNextMessage("Solo puede escoger entre (Q, R, N or B)\n");
+         createNextMessage("Solo puede escoger entre (D, T, C y A)\n");
          return;
       }
 
       char chPromoted = toupper(piece[0]);
 
-      if ( chPromoted != 'Q' && chPromoted != 'R' && chPromoted != 'N' && chPromoted != 'B' )
+      if ( chPromoted != 'D' && chPromoted != 'T' && chPromoted != 'C' && chPromoted != 'A' )
       {
          createNextMessage("Caracter invalido.\n");
          return;
@@ -587,12 +587,12 @@ void play::saveGame(void){
    std::ofstream ofs(file_name);
    if (ofs.is_open())
    {
-      // Write the date and time of save operation
+     
       auto time_now = std::chrono::system_clock::now();
       std::time_t end_time = std::chrono::system_clock::to_time_t(time_now);
       ofs << "[Guardado a]: " << std::ctime(&end_time);
 
-      // Write the moves
+  
       for (unsigned i = 0; i < current_game->rounds.size(); i++)
       {
          ofs << current_game->rounds[i].white_move.c_str() << " | " << current_game->rounds[i].black_move.c_str() << "\n";
@@ -688,7 +688,7 @@ void play::loadGame(void){
       
             if ( S_promotion.bApplied == true )
             {
-               if ( chPromoted != 'Q' && chPromoted != 'R' && chPromoted != 'N' && chPromoted != 'B' )
+               if ( chPromoted != 'D' && chPromoted != 'T' && chPromoted != 'C' && chPromoted != 'A' )
                {
                   createNextMessage("No se puede cargar el juego, existe una coronación invalida !\n");
 
