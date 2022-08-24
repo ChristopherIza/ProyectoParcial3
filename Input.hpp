@@ -1,15 +1,16 @@
-/**
- * UNIVERSIDAD DE LAS FUERZAS ARMADAS - ESPE
- * @file Input.hpp
- * @author De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
- * @brief Class that simulate scanf function
- * Github: https://github.com/ChristopherIza/Arboles_AVL.git
- * @version 0.1
- * @date 2022-07-13
- * Date last modification: 2022-07-14
- * @copyright Copyright (c) 2022
- * 
- */
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+	DEPARTAMENTO DE CIENCIAS DE LA COMPUTACION
+    INGENIERA DE SOFTWARE
+                
+	AUTORES:    Luca de Veintemilla
+				Kevin Vargas 
+                Cristopher Iza
+                Denisse Rea
+					
+	FECHA DE CREACION:        20-05-2022 	
+	FECHA DE MODIFICACION:    24-05-2022
+	Grupo #6
+*/
 
 #ifndef INPUT_HPP
 #define INPUT_HPP
