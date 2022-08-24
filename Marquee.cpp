@@ -1,16 +1,16 @@
-/**
- * UNIVERSIDAD DE LAS FUERZAS ARMADAS - ESPE
- * 
- * @file Node.hpp
- * @author  De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
- * @brief Node class
- * @brief Github: https://github.com/ChristopherIza/Arboles_AVL.git
- * @version 0.1
- * @date 2022-07-10
- * 
- * @copyright Copyright (c) 2022
- * 
- */
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+	DEPARTAMENTO DE CIENCIAS DE LA COMPUTACION
+    INGENIERA DE SOFTWARE
+                
+	AUTORES:    Luca de Veintemilla
+				Kevin Vargas 
+                Cristopher Iza
+                Denisse Rea
+					
+	FECHA DE CREACION:        20-05-2022 	
+	FECHA DE MODIFICACION:    24-05-2022
+	Grupo #6
+*/
 #include "Marquee.hpp"
 
 void Marquee::gotoXY(int x,int y ){
@@ -21,7 +21,7 @@ void Marquee::gotoXY(int x,int y ){
 
 void Marquee::displayMarquee(){
     int a=0,  c=1 ;
-char t[25] ="Arbol AVL";
+char t[25] ="Ajedrez";
 do
 {
 for (a=27;a<=66;a++)
