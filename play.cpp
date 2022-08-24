@@ -8,17 +8,15 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
 
    char chPiece = current_game->getPieceAtPosition(present.iRow, present.iColumn);
 
-   // ----------------------------------------------------
-   // 1. Is the piece  allowed to move in that direction?
-   // ----------------------------------------------------
+
    switch( toupper(chPiece) )
    {
       case 'P':
       {
-         // Wants to move forward
+
          if ( future.iColumn == present.iColumn )
          {
-            // Simple move forward
+         
             if ( (Chess::isWhitePiece(chPiece) && future.iRow == present.iRow + 1) ||
                  (Chess::isBlackPiece(chPiece) && future.iRow == present.iRow - 1) )
             {
@@ -28,11 +26,11 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
                }
             }
 
-            // Double move forward
+       
             else if ( (Chess::isWhitePiece(chPiece) && future.iRow == present.iRow + 2) ||
                       (Chess::isBlackPiece(chPiece) && future.iRow == present.iRow - 2) )
             {
-               // This is only allowed if the pawn is in its original place
+             
                if ( Chess::isWhitePiece(chPiece) )
                {
                   if ( EMPTY_SQUARE == current_game->getPieceAtPosition(future.iRow-1, future.iColumn) &&
@@ -42,7 +40,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
                      bValid = true;
                   }
                }
-               else // if ( isBlackPiece(chPiece) )
+               else 
                {
                   if ( EMPTY_SQUARE == current_game->getPieceAtPosition(future.iRow + 1, future.iColumn) &&
                        EMPTY_SQUARE == current_game->getPieceAtPosition(future.iRow, future.iColumn)     &&
@@ -54,24 +52,24 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
             }
             else
             {
-               // This is invalid
+          
                return false;
             }
          }
          
-         // The "en passant" move
+         
          else if ( (Chess::isWhitePiece(chPiece) && 4 == present.iRow && 5 == future.iRow && 1 == abs(future.iColumn - present.iColumn) ) ||
                    (Chess::isBlackPiece(chPiece) && 3 == present.iRow && 2 == future.iRow && 1 == abs(future.iColumn - present.iColumn) ) )
          {
-            // It is only valid if last move of the opponent was a double move forward by a pawn on a adjacent column
+           
             string last_move = current_game->getLastMove();
 
-            // Parse the line
+            
             Chess::Position LastMoveFrom;
             Chess::Position LastMoveTo;
             current_game->parseMove(last_move, &LastMoveFrom, &LastMoveTo);
 
-            // First of all, was it a pawn?
+         
             char chLstMvPiece = current_game->getPieceAtPosition(LastMoveTo.iRow, LastMoveTo.iColumn);
 
             if (toupper(chLstMvPiece) != 'P')
@@ -79,7 +77,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
                return false;
             }
 
-            // Did the pawn have a double move forward and was it an adjacent column?
+            
             if ( 2 == abs(LastMoveTo.iRow - LastMoveFrom.iRow) && 1 == abs(LastMoveFrom.iColumn - present.iColumn) )
             {
                cout << "Peon al paso!\n";
@@ -91,7 +89,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
             }
          }
 
-         // Wants to capture a piece
+         
          else if (1 == abs(future.iColumn - present.iColumn))
          {
             if ( (Chess::isWhitePiece(chPiece) && future.iRow == present.iRow + 1) || (Chess::isBlackPiece(chPiece) && future.iRow == present.iRow - 1))
@@ -106,11 +104,11 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
          }
          else
          {
-            // This is invalid
+        
             return false;
          }
 
-         // If a pawn reaches its eight rank, it must be promoted to another piece
+      
          if ( (Chess::isWhitePiece( chPiece ) && 7 == future.iRow) ||
               (Chess::isBlackPiece( chPiece ) && 0 == future.iRow) )
          {
@@ -122,19 +120,17 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
 
       case 'R':
       {
-         // Horizontal move
          if ( (future.iRow == present.iRow) && (future.iColumn != present.iColumn) )
          {
-            // Check if there are no pieces on the way
+       
             if ( current_game->isPathFree(present, future, Chess::HORIZONTAL) )
             {
                bValid = true;
             }
          }
-         // Vertical move
          else if ( (future.iRow != present.iRow) && (future.iColumn == present.iColumn) )
          {
-            // Check if there are no pieces on the way
+         
             if ( current_game->isPathFree(present, future, Chess::VERTICAL) )
             {
                bValid = true;
@@ -159,10 +155,10 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
 
       case 'B':
       {
-         // Diagonal move
+      
          if ( abs(future.iRow - present.iRow) == abs(future.iColumn - present.iColumn) )
          {
-            // Check if there are no pieces on the way
+          
             if ( current_game->isPathFree(present, future, Chess::DIAGONAL) )
             {
                bValid = true;
@@ -173,29 +169,29 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
 
       case 'Q':
       {
-         // Horizontal move
+
          if ( (future.iRow == present.iRow) && (future.iColumn != present.iColumn) )
          {
-            // Check if there are no pieces on the way
+      
             if ( current_game->isPathFree(present, future, Chess::HORIZONTAL))
             {
                bValid = true;
             }
          }
-         // Vertical move
+
          else if ( (future.iRow != present.iRow) && (future.iColumn == present.iColumn) )
          {
-            // Check if there are no pieces on the way
+   
             if ( current_game->isPathFree(present, future, Chess::VERTICAL))
             {
                bValid = true;
             }
          }
 
-         // Diagonal move
+ 
          else if ( abs(future.iRow - present.iRow) == abs(future.iColumn - present.iColumn) )
          {
-            // Check if there are no pieces on the way
+       
             if ( current_game->isPathFree(present, future, Chess::DIAGONAL))
             {
                bValid = true;
@@ -206,46 +202,42 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
 
       case 'K':
       {
-         // Horizontal move by 1
          if ( (future.iRow == present.iRow) && (1 == abs(future.iColumn - present.iColumn) ) )
          {
             bValid = true;
          }
 
-         // Vertical move by 1
+ 
          else if ( (future.iColumn == present.iColumn) && (1 == abs(future.iRow - present.iRow) ) )
          {
             bValid = true;
          }
 
-         // Diagonal move by 1
          else if ( (1 == abs(future.iRow - present.iRow) ) && (1 == abs(future.iColumn - present.iColumn) ) )
          {
             bValid = true;
          }
 
-         // Castling
          else if ( (future.iRow == present.iRow) && (2 == abs(future.iColumn - present.iColumn) ) )
          {
-            // Castling is only allowed in these circunstances:
+     
 
-            // 1. King is not in check
+        
             if ( true == current_game->playerKingInCheck() )
             {
                return false;
             }
 
-            // 2. No pieces in between the king and the rook
+  
             if ( false == current_game->isPathFree( present, future, Chess::HORIZONTAL ) )
             {
                return false;
             }
 
-            // 3. King and rook must not have moved yet;
-            // 4. King must not pass through a square that is attacked by an enemy piece
+
             if ( future.iColumn > present.iColumn )
             {
-               // if future.iColumn is greather, it means king side
+
                if ( false == current_game->castlingAllowed(Chess::Side::KING_SIDE, Chess::getPieceColor(chPiece) ) )
                {
                   createNextMessage("EL enroque no está permitido\n");
@@ -253,28 +245,28 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
                }
                else
                {
-                  // Check if the square that the king skips is not under attack
+     
                   Chess::UnderAttack square_skipped = current_game->isUnderAttack( present.iRow, present.iColumn + 1, current_game->getCurrentTurn() );
                   if ( false == square_skipped.bUnderAttack )
                   {
-                     // Fill the S_castling structure
+     
                      S_castling->bApplied = true;
 
-                     // Present position of the rook
+        
                      S_castling->rook_before.iRow    = present.iRow;
                      S_castling->rook_before.iColumn = present.iColumn + 3;
 
-                     // Future position of the rook
+            
                      S_castling->rook_after.iRow    = future.iRow;
-                     S_castling->rook_after.iColumn = present.iColumn + 1; // future.iColumn -1
+                     S_castling->rook_after.iColumn = present.iColumn + 1; 
 
                      bValid = true;
                   }
                }
             }
-            else //if (future.iColumn < present.iColumn)
+            else 
             {
-               // if present.iColumn is greather, it means queen side
+               
                if (false == current_game->castlingAllowed(Chess::Side::QUEEN_SIDE, Chess::getPieceColor(chPiece)))
                {
                   createNextMessage("El enroque no está permitido.\n");
@@ -282,20 +274,20 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
                }
                else
                {
-                  // Check if the square that the king skips is not attacked
+                  
                   Chess::UnderAttack square_skipped = current_game->isUnderAttack( present.iRow, present.iColumn - 1, current_game->getCurrentTurn() );
                   if ( false == square_skipped.bUnderAttack )
                   {
-                     // Fill the S_castling structure
+                     
                      S_castling->bApplied = true;
 
-                     // Present position of the rook
+                     
                      S_castling->rook_before.iRow    = present.iRow;
                      S_castling->rook_before.iColumn = present.iColumn - 4;
 
-                     // Future position of the rook
+                    
                      S_castling->rook_after.iRow    = future.iRow;
-                     S_castling->rook_after.iColumn = present.iColumn - 1; // future.iColumn +1
+                     S_castling->rook_after.iColumn = present.iColumn - 1;
 
                      bValid = true;
                   }
@@ -312,7 +304,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
       break;
    }
 
-   // If it is a move in an invalid direction, do not even bother to check the rest
+  
    if ( false == bValid )
    {
       cout << "No es permitido mover la pieza a ese cuadro\n";
@@ -320,9 +312,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
    }
 
 
-   // -------------------------------------------------------------------------
-   // 2. Is there another piece of the same color on the destination square?
-   // -------------------------------------------------------------------------
+
    if (current_game->isSquareOccupied(future.iRow, future.iColumn))
    {
       char chAuxPiece = current_game->getPieceAtPosition(future.iRow, future.iColumn);
@@ -333,9 +323,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
       }
    }
 
-   // ----------------------------------------------
-   // 3. Would the king be in check after the move?
-   // ----------------------------------------------
+
    if ( true == current_game->wouldKingBeInCheck(chPiece, present, future, S_enPassant) )
    {
       cout << "Movimiento pone en Jaque al rey\n";
@@ -348,9 +336,7 @@ bool play::isMoveValid(Chess::Position present, Chess::Position future, Chess::E
 void play::makeTheMove(Chess::Position present, Chess::Position future, Chess::EnPassant* S_enPassant, Chess::Castling* S_castling, Chess::Promotion* S_promotion){
     char chPiece = current_game->getPieceAtPosition(present.iRow, present.iColumn);
 
-   // -----------------------
-   // Captured a piece?
-   // -----------------------
+
    if ( current_game->isSquareOccupied(future.iRow, future.iColumn) )
    {
       char chAuxPiece = current_game->getPieceAtPosition(future.iRow, future.iColumn);
@@ -415,13 +401,7 @@ void play::movePiece(void){
    present.iColumn = move_from[0];
    present.iRow    = move_from[1];
 
-   // ---------------------------------------------------
-   // Did the user pick a valid piece?
-   // Must check if:
-   // - It's inside the board (A1-H8)
-   // - There is a piece in the square
-   // - The piece is consistent with the player's turn
-   // ---------------------------------------------------
+
    present.iColumn = toupper(present.iColumn);
 
    if ( present.iColumn < 'A' || present.iColumn > 'H' )
@@ -436,15 +416,12 @@ void play::movePiece(void){
       return;
    }
 
-   // Put in the string to be logged
    to_record += present.iColumn;
    to_record += present.iRow;
    to_record += "-";
 
-   // Convert column from ['A'-'H'] to [0x00-0x07]
    present.iColumn = present.iColumn - 'A';
 
-   // Convert row from ['1'-'8'] to [0x00-0x07]
    present.iRow  = present.iRow  - '1';
 
    char chPiece = current_game->getPieceAtPosition(present.iRow, present.iColumn);
@@ -473,10 +450,8 @@ void play::movePiece(void){
       }
    }
 
-   // ---------------------------------------------------
-   // Get user input for the square to move to
-   // ---------------------------------------------------
-   cout << "Move to: ";
+
+   cout << "Mover hacia: ";
    std::string move_to;
    getline(cin, move_to);
 
@@ -486,12 +461,6 @@ void play::movePiece(void){
       return;
    }
 
-   // ---------------------------------------------------
-   // Did the user pick a valid house to move?
-   // Must check if:
-   // - It's inside the board (A1-H8)
-   // - The move is valid
-   // ---------------------------------------------------
    Chess::Position future;
    future.iColumn = move_to[0];
    future.iRow    = move_to[1];
@@ -510,24 +479,23 @@ void play::movePiece(void){
       return;
    }
 
-   // Put in the string to be logged
+
    to_record += future.iColumn;
    to_record += future.iRow;
 
-   // Convert columns from ['A'-'H'] to [0x00-0x07]
+
    future.iColumn = future.iColumn - 'A';
 
-   // Convert row from ['1'-'8'] to [0x00-0x07]
+
    future.iRow = future.iRow - '1';
 
-   // Check if it is not the exact same square
    if ( future.iRow == present.iRow && future.iColumn == present.iColumn )
    {
       createNextMessage("[Invalido] Eligio la misma posicion!\n");
       return;
    }
 
-   // Is that move allowed?
+
    Chess::EnPassant  S_enPassant  = { 0 };
    Chess::Castling   S_castling   = { 0 };
    Chess::Promotion  S_promotion  = { 0 };
@@ -538,10 +506,6 @@ void play::movePiece(void){
       return;
    }
    
-   // ---------------------------------------------------
-   // Promotion: user most choose a piece to
-   // replace the pawn
-   // ---------------------------------------------------
    if ( S_promotion.bApplied == true )
    {
       cout << "Coronar a: (Q, R, N, B): ";
@@ -577,21 +541,13 @@ void play::movePiece(void){
       to_record += toupper(chPromoted); // always log with a capital letter
    }
 
-   // ---------------------------------------------------
-   // Log the move: do it prior to making the move
-   // because we need the getCurrentTurn()
-   // ---------------------------------------------------
+
    current_game->logMove( to_record );
 
-   // ---------------------------------------------------
-   // Make the move
-   // ---------------------------------------------------
+
    makeTheMove(present, future, &S_enPassant, &S_castling, &S_promotion);
 
-   // ---------------------------------------------------------------
-   // Check if this move we just did put the oponent's king in check
-   // Keep in mind that player turn has already changed
-   // ---------------------------------------------------------------
+
    if ( true == current_game->playerKingInCheck() )
    {
       if (true == current_game->isCheckMate() )
@@ -607,8 +563,7 @@ void play::movePiece(void){
       }
       else
       { 
-         // Add to the string with '+=' because it's possible that
-         // there is already one message (e.g., piece captured)
+
          if (Chess::WHITE_PLAYER == current_game->getCurrentTurn())
          {
             appendToNextMessage("El rey Blanco esta en jaque!\n");
@@ -664,7 +619,6 @@ void play::loadGame(void){
 
    if (ifs)
    {
-      // First, reset the pieces
       if (NULL != current_game)
       {
          delete current_game;
@@ -672,32 +626,32 @@ void play::loadGame(void){
 
       current_game = new Game();
 
-      // Now, read the lines from the file and then make the moves
+
       std::string line;
 
       while (std::getline(ifs, line) )
       {
-         // Skip lines that starts with "[]"
+   
          if ( 0 == line.compare(0, 1, "["))
          {
             continue;
          }
 
-         // There might be one or two moves in the line
+     
          string loaded_move[2];
          
-         // Find the separator and subtract one
+
          std::size_t separator = line.find(" |");
 
-         // For the first move, read from the beginning of the string until the separator
+   
          loaded_move[0] = line.substr(0, separator);
 
-         // For the second move, read from the separator until the end of the string (omit second parameter)
+
          loaded_move[1] = line.substr(line.find("|") + 2);
 
          for (int i = 0; i < 2 && loaded_move[i] != ""; i++)
          {
-            // Parse the line
+ 
             Chess::Position from;
             Chess::Position to;
 
@@ -705,7 +659,7 @@ void play::loadGame(void){
 
             current_game->parseMove(loaded_move[i], &from, &to, &chPromoted);
 
-            // Check if line is valid
+     
             if ( from.iColumn < 0 || from.iColumn > 7 ||
                  from.iRow    < 0 || from.iRow    > 7 ||
                  to.iColumn   < 0 || to.iColumn   > 7 ||
@@ -713,12 +667,12 @@ void play::loadGame(void){
             {
                createNextMessage("No se puede cargar el juego, las lineas estan erroneas!\n");
 
-               // Clear everything and return
+          
                current_game = new Game();
                return;
             }
 
-            // Is that move allowed? (should be because we already validated before saving)
+
             Chess::EnPassant S_enPassant = { 0 };
             Chess::Castling  S_castling  = { 0 };
             Chess::Promotion S_promotion = { 0 };
@@ -727,21 +681,17 @@ void play::loadGame(void){
             {
                createNextMessage("No se puede cargar el juego los movimientos estan mal!\n");
 
-               // Clear everything and return
                current_game = new Game();
                return;
             }
 
-            // ---------------------------------------------------
-            // A promotion occurred
-            // ---------------------------------------------------
+      
             if ( S_promotion.bApplied == true )
             {
                if ( chPromoted != 'Q' && chPromoted != 'R' && chPromoted != 'N' && chPromoted != 'B' )
                {
                   createNextMessage("No se puede cargar el juego, existe una coronación invalida !\n");
 
-                  // Clear everything and return
                   current_game = new Game();
                   return;
                }
@@ -759,15 +709,14 @@ void play::loadGame(void){
             }
 
 
-            // Log the move
+
             current_game->logMove(loaded_move[i]);
 
-            // Make the move
+   
             makeTheMove(from, to, &S_enPassant, &S_castling, &S_promotion);
          }
       }
 
-      // Extra line after the user input
       createNextMessage("Juego cargado desde " + file_name + "\n");
 
       return;
@@ -782,7 +731,7 @@ void play::loadGame(void){
 void play::start(){
     bool bRun = true;
 
-   // Clear screen an print the logo
+
    clearScreen();
    printLogo();
 
@@ -793,7 +742,6 @@ void play::start(){
       printMessage();
       printMenu();
 
-      // Get input from user
       cout << "Ingrese aqui: ";
       getline(cin, input);
 
