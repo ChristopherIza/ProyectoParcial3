@@ -42,37 +42,37 @@ std::string Chess::describePiece(char chPiece)
       {
          case 'P':
          {
-            description += "pawn";
+            description += "peon";
          }
          break;
 
-         case 'N':
+         case 'C':
          {
-            description += "knight";
+            description += "caballo";
          }
          break;
 
-         case 'B':
+         case 'A':
          {
-            description += "bishop";
+            description += "alfil";
          }
          break;
 
-         case 'R':
+         case 'T':
          {
-            description += "rook";
+            description += "torre";
          }
          break;
 
-         case 'Q':
+         case 'D':
          {
-            description += "queen";
+            description += "reina";
          }
          break;
 
          default:
          {
-            description += "Piez desconocida";
+            description += "Pieza desconocida";
          }
          break;
       }
@@ -219,13 +219,13 @@ void Game::movePiece(Position present, Position future, Chess::EnPassant* S_enPa
    }
 
  
-   if ( 'K' == toupper(chPiece) )
+   if ( 'R' == toupper(chPiece) )
    {
       
       m_bCastlingKingSideAllowed[getCurrentTurn()]  = false;
       m_bCastlingQueenSideAllowed[getCurrentTurn()] = false;
    }
-   else if ('R' == toupper(chPiece) )
+   else if ('T' == toupper(chPiece) )
    {
    
       if ( 0 == present.iColumn )
@@ -349,7 +349,7 @@ bool Game::castlingAllowed(Side iSide, int iColor)
    {
       return m_bCastlingQueenSideAllowed[iColor];
    }
-   else //if ( KING_SIDE == iSide )
+   else 
    {
       return m_bCastlingKingSideAllowed[iColor];
    }
@@ -417,8 +417,8 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
     
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'R') )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'T') )
          {
        
             attack.bUnderAttack = true;
@@ -451,8 +451,8 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
           
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'R') )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'T') )
          {
       
             attack.bUnderAttack = true;
@@ -488,8 +488,8 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
            
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'R')  )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'T')  )
          {
             
             attack.bUnderAttack = true;
@@ -522,8 +522,8 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
          
             break;
          }
-         else if ((toupper(chPieceFound) == 'Q') ||
-                  (toupper(chPieceFound) == 'R') )
+         else if ((toupper(chPieceFound) == 'D') ||
+                  (toupper(chPieceFound) == 'T') )
          {
          
             attack.bUnderAttack = true;
@@ -573,8 +573,8 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
             attack.attacker[attack.iNumAttackers-1].dir = DIAGONAL;
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'B'))
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'A'))
          {
            
             attack.bUnderAttack = true;
@@ -621,8 +621,8 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
             attack.attacker[attack.iNumAttackers-1].dir = DIAGONAL;
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'B'))
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'A'))
          {
            
             attack.bUnderAttack = true;
@@ -669,8 +669,8 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
             attack.attacker[attack.iNumAttackers-1].dir = DIAGONAL;
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'B') )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'A') )
          {
           
             attack.bUnderAttack = true;
@@ -717,8 +717,8 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
             attack.attacker[attack.iNumAttackers-1].dir = DIAGONAL;
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                     (toupper(chPieceFound) == 'B') )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                     (toupper(chPieceFound) == 'A') )
          {
     
             attack.bUnderAttack = true;
@@ -766,7 +766,7 @@ Chess::UnderAttack Game::isUnderAttack(int iRow, int iColumn, int iColor, Intend
          
             continue;
          }
-         else if ( (toupper(chPieceFound) == 'N') )
+         else if ( (toupper(chPieceFound) == 'C') )
          {
             attack.bUnderAttack = true;
             attack.iNumAttackers += 1;
@@ -802,8 +802,8 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
          
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'R') )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'T') )
          {
           
             bReachable = true;
@@ -831,8 +831,8 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
 
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'R') )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'T') )
          {
         
             bReachable = true;
@@ -871,8 +871,8 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
             bReachable = true;
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'R')  )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'T')  )
          {
          
             bReachable = true;
@@ -908,8 +908,8 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
             bReachable = true;
             break;
          }
-         else if ((toupper(chPieceFound) == 'Q') ||
-                  (toupper(chPieceFound) == 'R') )
+         else if ((toupper(chPieceFound) == 'D') ||
+                  (toupper(chPieceFound) == 'T') )
          {
           
             bReachable = true;
@@ -940,8 +940,8 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
          
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'B'))
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'A'))
          {
             
             bReachable = true;
@@ -969,8 +969,8 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
             
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'B'))
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'A'))
          {
           
             bReachable = true;
@@ -998,8 +998,8 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
          
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'B') )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'A') )
          {
           
             bReachable = true;
@@ -1027,8 +1027,8 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
            
             break;
          }
-         else if ( (toupper(chPieceFound) == 'Q') ||
-                   (toupper(chPieceFound) == 'B') )
+         else if ( (toupper(chPieceFound) == 'D') ||
+                   (toupper(chPieceFound) == 'A') )
          {
 
             bReachable = true;
@@ -1071,7 +1071,7 @@ bool Game::isReachable( int iRow, int iColumn, int iColor )
          
             continue;
          }
-         else if ( (toupper(chPieceFound) == 'N') )
+         else if ( (toupper(chPieceFound) == 'C') )
          {
             bReachable = true;
             break;
@@ -1322,7 +1322,7 @@ bool Game::canBeBlocked(Position startingPos, Position finishingPos, int iDirect
             {
                if ( true == isReachable( i, startingPos.iColumn, getOpponentColor() ) )
                {
-                  // Some piece can block the way
+                 
                   bBlocked = true;
                }
             }
@@ -1335,7 +1335,7 @@ bool Game::canBeBlocked(Position startingPos, Position finishingPos, int iDirect
             {
                if ( true == isReachable( i, startingPos.iColumn, getOpponentColor() ) )
                {
-                  // Some piece can block the way
+               
                   bBlocked = true;
                }
             }
@@ -1480,14 +1480,14 @@ bool Game::isCheckMate()
          switch( toupper(chAttacker) )
          {
             case 'P':
-            case 'N':
+            case 'C':
             {
 
                bCheckmate = true;
             }
             break;
 
-            case 'B':
+            case 'A':
             {
                if ( false == canBeBlocked(king_attacked.attacker[0].pos, king, Chess::DIAGONAL ) )
                {
@@ -1496,7 +1496,7 @@ bool Game::isCheckMate()
             }
             break;
 
-            case 'R':
+            case 'T':
             {
                if ( false == canBeBlocked(king_attacked.attacker[0].pos, king, king_attacked.attacker[0].dir ) )
                {
@@ -1506,7 +1506,7 @@ bool Game::isCheckMate()
             }
             break;
 
-            case 'Q':
+            case 'D':
             {
                if ( false == canBeBlocked(king_attacked.attacker[0].pos, king, king_attacked.attacker[0].dir ) )
                {
