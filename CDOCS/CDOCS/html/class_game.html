@@ -1,0 +1,891 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Ajedrez: Referencia de la Clase Game</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Ajedrez<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Jugar Ajedrez mediante búsqueda exhaustiva</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#pub-methods">Métodos públicos</a> &#124;
+<a href="#pub-attribs">Atributos públicos</a> &#124;
+<a href="class_game-members.html">Lista de todos los miembros</a>  </div>
+  <div class="headertitle"><div class="title">Referencia de la Clase Game</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="chess_8h_source.html">chess.h</a>&gt;</code></p>
+<div class="dynheader">
+Diagrama de herencias de Game</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_game.png" usemap="#Game_map" alt=""/>
+  <map id="Game_map" name="Game_map">
+<area href="class_chess.html" alt="Chess" shape="rect" coords="0,0,47,24"/>
+  </map>
+</div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game_1_1_round.html">Round</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Métodos públicos</h2></td></tr>
+<tr class="memitem:ad59df6562a58a614fda24622d3715b65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a> ()</td></tr>
+<tr class="separator:ad59df6562a58a614fda24622d3715b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d112ca6e0e55150d2fdbc704474530"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae3d112ca6e0e55150d2fdbc704474530">~Game</a> ()</td></tr>
+<tr class="separator:ae3d112ca6e0e55150d2fdbc704474530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aceaf2af6da1f6bbec7e43f9001fc91e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aceaf2af6da1f6bbec7e43f9001fc91e7">movePiece</a> (<a class="el" href="struct_chess_1_1_position.html">Position</a> present, <a class="el" href="struct_chess_1_1_position.html">Position</a> future, <a class="el" href="struct_chess_1_1_en_passant.html">Chess::EnPassant</a> *S_enPassant, <a class="el" href="struct_chess_1_1_castling.html">Chess::Castling</a> *S_castling, <a class="el" href="struct_chess_1_1_promotion.html">Chess::Promotion</a> *S_promotion)</td></tr>
+<tr class="separator:aceaf2af6da1f6bbec7e43f9001fc91e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd42cea9cdca942265baa2b5828ef4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aebd42cea9cdca942265baa2b5828ef4e">undoLastMove</a> ()</td></tr>
+<tr class="separator:aebd42cea9cdca942265baa2b5828ef4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88fc2bcaff9f2519fc75960ee8887df8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a88fc2bcaff9f2519fc75960ee8887df8">undoIsPossible</a> ()</td></tr>
+<tr class="separator:a88fc2bcaff9f2519fc75960ee8887df8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1ac83fa9c3122c8d635d75121cad192"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae1ac83fa9c3122c8d635d75121cad192">castlingAllowed</a> (<a class="el" href="class_chess.html#ac9b95675fee169686b647ee309805f31">Side</a> iSide, int iColor)</td></tr>
+<tr class="separator:ae1ac83fa9c3122c8d635d75121cad192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8948766a69ab8a539a7866f06fec8e47"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a8948766a69ab8a539a7866f06fec8e47">getPieceAtPosition</a> (int iRow, int iColumn)</td></tr>
+<tr class="separator:a8948766a69ab8a539a7866f06fec8e47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aaa9dd2a4ab7c9c853658631ef75788"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a8aaa9dd2a4ab7c9c853658631ef75788">getPieceAtPosition</a> (<a class="el" href="struct_chess_1_1_position.html">Position</a> pos)</td></tr>
+<tr class="separator:a8aaa9dd2a4ab7c9c853658631ef75788"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d3602e32d9c6eeb7b73e05faaeea136"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a9d3602e32d9c6eeb7b73e05faaeea136">getPiece_considerMove</a> (int iRow, int iColumn, <a class="el" href="struct_chess_1_1_intended_move.html">IntendedMove</a> *intended_move=nullptr)</td></tr>
+<tr class="separator:a9d3602e32d9c6eeb7b73e05faaeea136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69c3e788ef32c2491f534adf10ece0be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_chess_1_1_under_attack.html">UnderAttack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a69c3e788ef32c2491f534adf10ece0be">isUnderAttack</a> (int iRow, int iColumn, int iColor, <a class="el" href="struct_chess_1_1_intended_move.html">IntendedMove</a> *pintended_move=nullptr)</td></tr>
+<tr class="separator:a69c3e788ef32c2491f534adf10ece0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3829cc3ac175130da78a26c443d8993"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab3829cc3ac175130da78a26c443d8993">isReachable</a> (int iRow, int iColumn, int iColor)</td></tr>
+<tr class="separator:ab3829cc3ac175130da78a26c443d8993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f7edaf959aca1a69aa694545cf7e5d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a40f7edaf959aca1a69aa694545cf7e5d">isSquareOccupied</a> (int iRow, int iColumn)</td></tr>
+<tr class="separator:a40f7edaf959aca1a69aa694545cf7e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be9597be3dbea71dd6b5953a723cc0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a3be9597be3dbea71dd6b5953a723cc0b">isPathFree</a> (<a class="el" href="struct_chess_1_1_position.html">Position</a> startingPos, <a class="el" href="struct_chess_1_1_position.html">Position</a> finishingPos, int iDirection)</td></tr>
+<tr class="separator:a3be9597be3dbea71dd6b5953a723cc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b2a1077c90a44c0c8542593195baf72"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a4b2a1077c90a44c0c8542593195baf72">canBeBlocked</a> (<a class="el" href="struct_chess_1_1_position.html">Position</a> startingPos, <a class="el" href="struct_chess_1_1_position.html">Position</a> finishinPos, int iDirection)</td></tr>
+<tr class="separator:a4b2a1077c90a44c0c8542593195baf72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a775813340f0770f5a40737063e475129"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a775813340f0770f5a40737063e475129">isCheckMate</a> ()</td></tr>
+<tr class="separator:a775813340f0770f5a40737063e475129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3aad9ee90f823d24302ca362ac97488"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae3aad9ee90f823d24302ca362ac97488">isKingInCheck</a> (int iColor, <a class="el" href="struct_chess_1_1_intended_move.html">IntendedMove</a> *intended_move=nullptr)</td></tr>
+<tr class="separator:ae3aad9ee90f823d24302ca362ac97488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40be483385aa5a120d8ccc34043b0d3c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a40be483385aa5a120d8ccc34043b0d3c">playerKingInCheck</a> (<a class="el" href="struct_chess_1_1_intended_move.html">IntendedMove</a> *intended_move=nullptr)</td></tr>
+<tr class="separator:a40be483385aa5a120d8ccc34043b0d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3283a3477d4c07a96f6775a490ea3cc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa3283a3477d4c07a96f6775a490ea3cc">wouldKingBeInCheck</a> (char chPiece, <a class="el" href="struct_chess_1_1_position.html">Position</a> present, <a class="el" href="struct_chess_1_1_position.html">Position</a> future, <a class="el" href="struct_chess_1_1_en_passant.html">EnPassant</a> *S_enPassant)</td></tr>
+<tr class="separator:aa3283a3477d4c07a96f6775a490ea3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fef02e2be5caf10ddb225777c6789a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a6fef02e2be5caf10ddb225777c6789a2">findKing</a> (int iColor)</td></tr>
+<tr class="separator:a6fef02e2be5caf10ddb225777c6789a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95943ef0d2e32db8565d0a0978cc2e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ab95943ef0d2e32db8565d0a0978cc2e1">changeTurns</a> (void)</td></tr>
+<tr class="separator:ab95943ef0d2e32db8565d0a0978cc2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67e1dc84760d0854b2f0eb56236ad3f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a67e1dc84760d0854b2f0eb56236ad3f5">isFinished</a> (void)</td></tr>
+<tr class="separator:a67e1dc84760d0854b2f0eb56236ad3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae77981dbb2d84ad58452cfbebcf19e3c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#ae77981dbb2d84ad58452cfbebcf19e3c">getCurrentTurn</a> (void)</td></tr>
+<tr class="separator:ae77981dbb2d84ad58452cfbebcf19e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ecd646661f166aa64fbe3aa3282039c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a4ecd646661f166aa64fbe3aa3282039c">getOpponentColor</a> (void)</td></tr>
+<tr class="separator:a4ecd646661f166aa64fbe3aa3282039c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa31393a7f17f93d91699fd1816169974"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#aa31393a7f17f93d91699fd1816169974">parseMove</a> (string move, <a class="el" href="struct_chess_1_1_position.html">Position</a> *pFrom, <a class="el" href="struct_chess_1_1_position.html">Position</a> *pTo, char *chPromoted=nullptr)</td></tr>
+<tr class="separator:aa31393a7f17f93d91699fd1816169974"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00809ce1faf4eabb28513d993fb908c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a00809ce1faf4eabb28513d993fb908c6">logMove</a> (std::string &amp;to_record)</td></tr>
+<tr class="separator:a00809ce1faf4eabb28513d993fb908c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1e4d53b685b72c9e79b0c6ea623fb4"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a8a1e4d53b685b72c9e79b0c6ea623fb4">getLastMove</a> (void)</td></tr>
+<tr class="separator:a8a1e4d53b685b72c9e79b0c6ea623fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a300bb9f3bd1de9b95fea29652abfae93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a300bb9f3bd1de9b95fea29652abfae93">deleteLastMove</a> (void)</td></tr>
+<tr class="separator:a300bb9f3bd1de9b95fea29652abfae93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Atributos públicos</h2></td></tr>
+<tr class="memitem:a874ebf4473deb8f89b8131cca4488a92"><td class="memItemLeft" align="right" valign="top">std::deque&lt; <a class="el" href="struct_game_1_1_round.html">Round</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a874ebf4473deb8f89b8131cca4488a92">rounds</a></td></tr>
+<tr class="separator:a874ebf4473deb8f89b8131cca4488a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c862900e6cd84dcf3982f1c5d2b985f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#a7c862900e6cd84dcf3982f1c5d2b985f">white_captured</a></td></tr>
+<tr class="separator:a7c862900e6cd84dcf3982f1c5d2b985f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd73549ee413f09f693bd68b33c5fc47"><td class="memItemLeft" align="right" valign="top">std::vector&lt; char &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game.html#acd73549ee413f09f693bd68b33c5fc47">black_captured</a></td></tr>
+<tr class="separator:acd73549ee413f09f693bd68b33c5fc47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación del constructor y destructor</h2>
+<a id="ad59df6562a58a614fda24622d3715b65" name="ad59df6562a58a614fda24622d3715b65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad59df6562a58a614fda24622d3715b65">&#9670;&nbsp;</a></span>Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Game::Game </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae3d112ca6e0e55150d2fdbc704474530" name="ae3d112ca6e0e55150d2fdbc704474530"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3d112ca6e0e55150d2fdbc704474530">&#9670;&nbsp;</a></span>~Game()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Game::~Game </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de las funciones miembro</h2>
+<a id="a4b2a1077c90a44c0c8542593195baf72" name="a4b2a1077c90a44c0c8542593195baf72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b2a1077c90a44c0c8542593195baf72">&#9670;&nbsp;</a></span>canBeBlocked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::canBeBlocked </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>startingPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>finishinPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iDirection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae1ac83fa9c3122c8d635d75121cad192" name="ae1ac83fa9c3122c8d635d75121cad192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1ac83fa9c3122c8d635d75121cad192">&#9670;&nbsp;</a></span>castlingAllowed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::castlingAllowed </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_chess.html#ac9b95675fee169686b647ee309805f31">Side</a>&#160;</td>
+          <td class="paramname"><em>iSide</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab95943ef0d2e32db8565d0a0978cc2e1" name="ab95943ef0d2e32db8565d0a0978cc2e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab95943ef0d2e32db8565d0a0978cc2e1">&#9670;&nbsp;</a></span>changeTurns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::changeTurns </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a300bb9f3bd1de9b95fea29652abfae93" name="a300bb9f3bd1de9b95fea29652abfae93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a300bb9f3bd1de9b95fea29652abfae93">&#9670;&nbsp;</a></span>deleteLastMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::deleteLastMove </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6fef02e2be5caf10ddb225777c6789a2" name="a6fef02e2be5caf10ddb225777c6789a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fef02e2be5caf10ddb225777c6789a2">&#9670;&nbsp;</a></span>findKing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_chess_1_1_position.html">Chess::Position</a> Game::findKing </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae77981dbb2d84ad58452cfbebcf19e3c" name="ae77981dbb2d84ad58452cfbebcf19e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae77981dbb2d84ad58452cfbebcf19e3c">&#9670;&nbsp;</a></span>getCurrentTurn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::getCurrentTurn </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a1e4d53b685b72c9e79b0c6ea623fb4" name="a8a1e4d53b685b72c9e79b0c6ea623fb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1e4d53b685b72c9e79b0c6ea623fb4">&#9670;&nbsp;</a></span>getLastMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Game::getLastMove </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ecd646661f166aa64fbe3aa3282039c" name="a4ecd646661f166aa64fbe3aa3282039c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ecd646661f166aa64fbe3aa3282039c">&#9670;&nbsp;</a></span>getOpponentColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Game::getOpponentColor </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d3602e32d9c6eeb7b73e05faaeea136" name="a9d3602e32d9c6eeb7b73e05faaeea136"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d3602e32d9c6eeb7b73e05faaeea136">&#9670;&nbsp;</a></span>getPiece_considerMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Game::getPiece_considerMove </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColumn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_intended_move.html">IntendedMove</a> *&#160;</td>
+          <td class="paramname"><em>intended_move</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8948766a69ab8a539a7866f06fec8e47" name="a8948766a69ab8a539a7866f06fec8e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8948766a69ab8a539a7866f06fec8e47">&#9670;&nbsp;</a></span>getPieceAtPosition() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Game::getPieceAtPosition </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColumn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8aaa9dd2a4ab7c9c853658631ef75788" name="a8aaa9dd2a4ab7c9c853658631ef75788"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aaa9dd2a4ab7c9c853658631ef75788">&#9670;&nbsp;</a></span>getPieceAtPosition() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char Game::getPieceAtPosition </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a775813340f0770f5a40737063e475129" name="a775813340f0770f5a40737063e475129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a775813340f0770f5a40737063e475129">&#9670;&nbsp;</a></span>isCheckMate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::isCheckMate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67e1dc84760d0854b2f0eb56236ad3f5" name="a67e1dc84760d0854b2f0eb56236ad3f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e1dc84760d0854b2f0eb56236ad3f5">&#9670;&nbsp;</a></span>isFinished()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::isFinished </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae3aad9ee90f823d24302ca362ac97488" name="ae3aad9ee90f823d24302ca362ac97488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3aad9ee90f823d24302ca362ac97488">&#9670;&nbsp;</a></span>isKingInCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::isKingInCheck </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_intended_move.html">IntendedMove</a> *&#160;</td>
+          <td class="paramname"><em>intended_move</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3be9597be3dbea71dd6b5953a723cc0b" name="a3be9597be3dbea71dd6b5953a723cc0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be9597be3dbea71dd6b5953a723cc0b">&#9670;&nbsp;</a></span>isPathFree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::isPathFree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>startingPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>finishingPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iDirection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3829cc3ac175130da78a26c443d8993" name="ab3829cc3ac175130da78a26c443d8993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3829cc3ac175130da78a26c443d8993">&#9670;&nbsp;</a></span>isReachable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::isReachable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColumn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40f7edaf959aca1a69aa694545cf7e5d" name="a40f7edaf959aca1a69aa694545cf7e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f7edaf959aca1a69aa694545cf7e5d">&#9670;&nbsp;</a></span>isSquareOccupied()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::isSquareOccupied </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColumn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a69c3e788ef32c2491f534adf10ece0be" name="a69c3e788ef32c2491f534adf10ece0be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c3e788ef32c2491f534adf10ece0be">&#9670;&nbsp;</a></span>isUnderAttack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_chess_1_1_under_attack.html">Chess::UnderAttack</a> Game::isUnderAttack </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iRow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColumn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>iColor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_intended_move.html">IntendedMove</a> *&#160;</td>
+          <td class="paramname"><em>pintended_move</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00809ce1faf4eabb28513d993fb908c6" name="a00809ce1faf4eabb28513d993fb908c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00809ce1faf4eabb28513d993fb908c6">&#9670;&nbsp;</a></span>logMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::logMove </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>to_record</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aceaf2af6da1f6bbec7e43f9001fc91e7" name="aceaf2af6da1f6bbec7e43f9001fc91e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aceaf2af6da1f6bbec7e43f9001fc91e7">&#9670;&nbsp;</a></span>movePiece()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::movePiece </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>present</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>future</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_en_passant.html">Chess::EnPassant</a> *&#160;</td>
+          <td class="paramname"><em>S_enPassant</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_castling.html">Chess::Castling</a> *&#160;</td>
+          <td class="paramname"><em>S_castling</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_promotion.html">Chess::Promotion</a> *&#160;</td>
+          <td class="paramname"><em>S_promotion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa31393a7f17f93d91699fd1816169974" name="aa31393a7f17f93d91699fd1816169974"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31393a7f17f93d91699fd1816169974">&#9670;&nbsp;</a></span>parseMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::parseMove </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>move</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a> *&#160;</td>
+          <td class="paramname"><em>pFrom</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a> *&#160;</td>
+          <td class="paramname"><em>pTo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>chPromoted</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a40be483385aa5a120d8ccc34043b0d3c" name="a40be483385aa5a120d8ccc34043b0d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40be483385aa5a120d8ccc34043b0d3c">&#9670;&nbsp;</a></span>playerKingInCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::playerKingInCheck </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_intended_move.html">IntendedMove</a> *&#160;</td>
+          <td class="paramname"><em>intended_move</em> = <code>nullptr</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88fc2bcaff9f2519fc75960ee8887df8" name="a88fc2bcaff9f2519fc75960ee8887df8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88fc2bcaff9f2519fc75960ee8887df8">&#9670;&nbsp;</a></span>undoIsPossible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::undoIsPossible </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aebd42cea9cdca942265baa2b5828ef4e" name="aebd42cea9cdca942265baa2b5828ef4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd42cea9cdca942265baa2b5828ef4e">&#9670;&nbsp;</a></span>undoLastMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Game::undoLastMove </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa3283a3477d4c07a96f6775a490ea3cc" name="aa3283a3477d4c07a96f6775a490ea3cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3283a3477d4c07a96f6775a490ea3cc">&#9670;&nbsp;</a></span>wouldKingBeInCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Game::wouldKingBeInCheck </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>chPiece</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>present</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_position.html">Position</a>&#160;</td>
+          <td class="paramname"><em>future</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_chess_1_1_en_passant.html">EnPassant</a> *&#160;</td>
+          <td class="paramname"><em>S_enPassant</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de los datos miembro</h2>
+<a id="acd73549ee413f09f693bd68b33c5fc47" name="acd73549ee413f09f693bd68b33c5fc47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd73549ee413f09f693bd68b33c5fc47">&#9670;&nbsp;</a></span>black_captured</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;char&gt; Game::black_captured</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a874ebf4473deb8f89b8131cca4488a92" name="a874ebf4473deb8f89b8131cca4488a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874ebf4473deb8f89b8131cca4488a92">&#9670;&nbsp;</a></span>rounds</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::deque&lt;<a class="el" href="struct_game_1_1_round.html">Round</a>&gt; Game::rounds</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c862900e6cd84dcf3982f1c5d2b985f" name="a7c862900e6cd84dcf3982f1c5d2b985f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c862900e6cd84dcf3982f1c5d2b985f">&#9670;&nbsp;</a></span>white_captured</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;char&gt; Game::white_captured</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>La documentación para esta clase fue generada a partir de los siguientes ficheros:<ul>
+<li>D:/Documentos/PP3/ProyectoParcial3-main/<a class="el" href="chess_8h_source.html">chess.h</a></li>
+<li>D:/Documentos/PP3/ProyectoParcial3-main/<a class="el" href="chess_8cpp.html">chess.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

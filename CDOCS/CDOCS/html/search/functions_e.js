@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['safefread_0',['SafeFread',['../_easy_b_m_p_8cpp.html#a7151a3d14fa85dc0d9f4909b188c6b91',1,'SafeFread(char *buffer, int size, int number, FILE *fp):&#160;EasyBMP.cpp'],['../_easy_b_m_p___b_m_p_8h.html#a7151a3d14fa85dc0d9f4909b188c6b91',1,'SafeFread(char *buffer, int size, int number, FILE *fp):&#160;EasyBMP.cpp']]],
+  ['savegame_1',['saveGame',['../classplay.html#a779e4ef717ec15ab1b7713d8395f44f2',1,'play']]],
+  ['setbitdepth_2',['SetBitDepth',['../class_b_m_p.html#a8274e16938a5ae0a71210f140e2fc016',1,'BMP']]],
+  ['setcolor_3',['SetColor',['../class_b_m_p.html#aa1b4400834341da1e6551f52a32b3956',1,'BMP']]],
+  ['setcursorposition_4',['setCursorPosition',['../class_handle_console.html#a45a5128a60f45c689fcc6e786fce10d5',1,'HandleConsole']]],
+  ['setcursorvisibilitie_5',['setCursorVisibilitie',['../class_handle_console.html#a8f3f907faaf908e428044b8a6aeb3d9d',1,'HandleConsole']]],
+  ['setdpi_6',['SetDPI',['../class_b_m_p.html#a7ff803dfff74e560f648ac25dce0846d',1,'BMP']]],
+  ['seteasybmpwarningsoff_7',['SetEasyBMPwarningsOff',['../_easy_b_m_p_8cpp.html#aa572cda955cea246911a9d44fa19f96d',1,'SetEasyBMPwarningsOff(void):&#160;EasyBMP.cpp'],['../_easy_b_m_p_8h.html#aa572cda955cea246911a9d44fa19f96d',1,'SetEasyBMPwarningsOff(void):&#160;EasyBMP.cpp']]],
+  ['seteasybmpwarningson_8',['SetEasyBMPwarningsOn',['../_easy_b_m_p_8cpp.html#ac27f66464409775cfc3833843bff8245',1,'SetEasyBMPwarningsOn(void):&#160;EasyBMP.cpp'],['../_easy_b_m_p_8h.html#ac27f66464409775cfc3833843bff8245',1,'SetEasyBMPwarningsOn(void):&#160;EasyBMP.cpp']]],
+  ['setfillcolor_9',['setFillColor',['../class_p_d_f.html#ab2d6bbbd944db25f64a4fa1698fe3ccd',1,'PDF']]],
+  ['setfont_10',['setFont',['../class_p_d_f.html#a31c42cd14b21e6ac531f9c68f05c02e6',1,'PDF']]],
+  ['setlinecolor_11',['setLineColor',['../class_p_d_f.html#a918e4c7862d87effb26fcf64096f6f31',1,'PDF']]],
+  ['setlinewidth_12',['setLineWidth',['../class_p_d_f.html#ab4bb388f560240274921d52be4dff354',1,'PDF']]],
+  ['setlistoptions_13',['setListOptions',['../class_menu_g_u_i.html#a512b9b64195c4b3b854dd97a617fcd06',1,'MenuGUI']]],
+  ['setpixel_14',['SetPixel',['../class_b_m_p.html#ae378a2baa9e7690b94a0b37d29719818',1,'BMP']]],
+  ['setpositionofmenu_15',['setPositionOfMenu',['../class_menu_g_u_i.html#ad6c67fe501d3b6dcd2c1b825b40e6d65',1,'MenuGUI']]],
+  ['setsize_16',['SetSize',['../class_b_m_p.html#a2508215650ae9b72ab85d7b7e336378e',1,'BMP']]],
+  ['settitlemenu_17',['setTitleMenu',['../class_menu_g_u_i.html#a8d0234d828e9db955727962736db368d',1,'MenuGUI']]],
+  ['showimage_18',['showImage',['../class_p_d_f.html#aa7023fcffe37b95334743572934a719f',1,'PDF::showImage(const ImageInfo &amp;info, int x, int y, double xScale, double yScale)'],['../class_p_d_f.html#a37a85cf30d03a215f05720499a595688',1,'PDF::showImage(const ImageInfo &amp;info, int x, int y, double scale)'],['../class_p_d_f.html#a37666af970120a3ab8c4a51c92b457fc',1,'PDF::showImage(const ImageInfo &amp;info, int x, int y)']]],
+  ['showtextxy_19',['showTextXY',['../class_p_d_f.html#a01277d08b8ec99e537ec48f097b23d19',1,'PDF']]],
+  ['square_20',['Square',['../_easy_b_m_p___data_structures_8h.html#a8e24ca8974baacbdab1b564da5439845',1,'EasyBMP_DataStructures.h']]],
+  ['start_21',['start',['../class_login.html#ae62ae5864f33eba2add268e30015834a',1,'Login::start()'],['../class_menu_login.html#a53d60e654c350d271d4fa3d269936b32',1,'MenuLogin::start()'],['../class_menu_principal.html#a0f328cad8f69f4480dacbd70ba8f322d',1,'MenuPrincipal::start()'],['../class_menu_signup.html#a02bef776161d8f63ffd3a751c8c0e219',1,'MenuSignup::start()'],['../classplay.html#a634f2b96a6d40317f814ea3746247539',1,'play::start()']]],
+  ['stringwidth_22',['stringWidth',['../class_p_d_f.html#a2a7d4ab1054766eb619b5e1108818461',1,'PDF::stringWidth(Font currentFont, int currentSize, const string &amp;text)'],['../class_p_d_f.html#a0f9b639610945b8d2b37464b73676258',1,'PDF::stringWidth(const string &amp;text)']]],
+  ['switchendianess_23',['SwitchEndianess',['../class_b_m_f_h.html#a749e4bb6cfa10ed9fa77c3578c471110',1,'BMFH::SwitchEndianess()'],['../class_b_m_i_h.html#aece3c1b46fe1712b5926d0b47eb1739f',1,'BMIH::SwitchEndianess()']]]
+];
