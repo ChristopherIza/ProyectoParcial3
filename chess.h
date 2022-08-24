@@ -1,13 +1,16 @@
-/**
- * @file chess.h
- * @author De Veintemilla Luca- Iza Christopher- Rea Denise - Vargas Kevin
- * @brief // Descripción de la clase 
- * @version 0.1
- * @date 2022-08-20
- * 
- * @copyright Copyright (c) 2022
- * 
- */
+/*	UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+	DEPARTAMENTO DE CIENCIAS DE LA COMPUTACION
+    INGENIERA DE SOFTWARE
+                
+	AUTORES:    Luca de Veintemilla
+				Kevin Vargas 
+                Cristopher Iza
+                Denisse Rea
+					
+	FECHA DE CREACION:        20-05-2022 	
+	FECHA DE MODIFICACION:    24-05-2022
+	Grupo #6
+*/
 #include "includes.h"
 
 class Chess
