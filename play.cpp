@@ -386,7 +386,7 @@ void play::movePiece(void){
     std::string to_record;
 
    // Get user input for the piece they want to move
-   cout << "Elija la posicion de la pieza que desea mover. (Ejemplo: A1 or b2): ";
+   cout << "Elija la posicion de la pieza que desea mover. (Ejemplo: A1 o a1): ";
 
    std::string move_from;
    getline(cin, move_from);
