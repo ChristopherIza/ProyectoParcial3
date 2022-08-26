@@ -10,7 +10,15 @@
 	FECHA DE CREACION:        20-05-2022 	
 	FECHA DE MODIFICACION:    24-05-2022
 	Grupo #6
+
+/*
+ Compilar con: 
+g++ chess.cpp ConsoleDataInput.cpp EasyBMP.cpp GlobalVariables.cpp HandleConsole.cpp IdVerificator.cpp 
+Imagen.cpp Input.cpp Login.cpp main.cpp Marquee.cpp MenuGUI.cpp MenuLogin.cpp MenuPrincipal.cpp 
+MenuSignup.cpp metrics.cpp pdf.cpp PDFManager.cpp play.cpp user_interface.cpp ValidateUser.cpp -o main    
 */
+
+
 // #include "MenuPrincipal.hpp"
 #include "Login.hpp"
 #include "Marquee.hpp"
